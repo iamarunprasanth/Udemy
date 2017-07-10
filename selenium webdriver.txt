@@ -1,0 +1,400 @@
+
+WebDriver driver – Type of class used to implement the selenium web driver functionalities. 
+WebElement element  - returns WebElement used to store web element identified on a webpage.
+By – Type of class derives different kind of locators can be used to identify web elements. 
+Different locators: Id, name, css, xpath, link text, tag 
+Syntax for identifying web element using locator
+driver.findElemen(By.<locator>(“value”));
+Advanced locators CSS:
+Syntax – tag_name[attribute=’value’]
+# - represents id
+. – represents class 
+So, tag_name#value / tag_name.value is achievable. 
+Wild cards – ^ represents value starts with
+	         $ represents value ends with
+	<star> represents value containing
+
+Using Fieldset -> when there is no dedicated parent tag/attributes to traverse through web element, we can achieve the same using FIELDSET as well. 
+FIELDSETS are type html tags, syntax: fieldset>tag_name=’value’ or fieldset>#id_value or fieldset>.class_value
+Using wild cards : fieldset> tag_name ^/$/* =’value’ 
+Advanced locators XPath:
+Syntax – tag_name[@attribute=’value’]
+2 types of Xpath – absolute and relative
+Absolute – provides the completes html structure till the web element (html/body/etc)
+Relative – provides the xpath from its parent tag ; it’s always recommended to use relative xpath as change in html structure will affect the absolute xpath. 
+Wild cards in xpath:
+//tag_name[starts-with(@attribute,’value’)]
+//tag_name[ends-with(@attribute,’value’)]
+//tag_name[(contains(@attribute,’value)]
+When traverse through tags where proper attribute is not present:
+Parent-sibling/preceding-sibling/following-sibling
+//tag_name[contains(text(),’value’)]//parent-sibiling::tag_name
+Assert – will fail the test step but still proceed with next step 
+Verify – will fail the test step also stops the execution 
+Junit test - @BeforeClass – Executes before class
+@AfterClass – Executes after class
+@Before – Executes before test method 
+@After – Executes after test method 
+@Test – Executes the test method, when multiple test methods are placed – order of execution will be based on alphabetical order of test method name.
+Click and type on a webelement – click.sendKeys(“text”);
+Navigate b/w web pages – driver.window.navigate().back/forward()
+State of the webElement – IsEnabled() -> returns true/false
+To select multiple value from drop down – we have to use Select class 
+We need to select an obj reference and pass the drop down element as parameter
+We can select by: selectByIndex,selectByValue,selectByVisibleText; to get all values  we use method getAllSelectedOptions
+Hidden elements are just not shown in webpage but still shown in DOM
+Get text on an element – element.getText(“pass locator”) method 
+Get value of element attribute – element.getAttribute(“pass locator”)
+Check if element is present – IsPresent() method
+Implicit wait – waits for specified time period on the webpage, when the elements are not loaded even after the specified time period – once again checks for the specified time period and throws an exception
+Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS)
+Explicit wait – waits for specified time until some condition(element to load,, visible, clickable) , when the condition doesn’t meet until the specified time period it will stop there. Explicit wait checks for every 500 milli seconds for the condition until the specified time period. 
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
+Using JavaScript Commands: 
+JavascriptExecutor js;
+To navigate to some page
+Js.executeScript(“window.location, ‘url’”);
+To find element
+Js.executeScript(“return document.getElementById(‘name’);”)
+Js.executeScript(“return document.getElementsByClass(‘name’);”)
+Size of the window using js
+Js.executeScript(“return window.innerHeight”)
+Js.executeScript(“return window.innerWidth”)
+// Scroll Down
+		js.executeScript("window.scrollBy(0, 1900);");
+		Thread.sleep(2000);
+		
+		// Scroll Up
+		js.executeScript("window.scrollBy(0, -1900);");
+Scrolling tofind element:
+js.executeScript("arguments[0].scrollIntoView(true);",element);
+			
+Taking screenshot:
+File file = ((takesScreenshot)driver).getScreenshotAs(OutputType.FILE)
+FileUtil.copyFile(file, new File(“directory+filename));
+Window Handles: basically a new window
+Switching window handles:
+String parent = driver.getWindowHandle();
+List<String> handles = driver.getWindowHandles();
+Driver.switchTo().window(parent)
+Iframes: window within a window 
+// switching to frame using ID
+		driver.switchTo().frame("id");
+		// switching to frame using name 
+		driver.switchTo().frame("name");
+		// switching to frame using number 
+		driver.switchTo().frame(0);
+		// navigating back to parent window 
+		driver.switchTo().defaultContent();
+		driver.switchTo().parentFrame();
+Handling javascript popups 
+Simple alert
+Driver.switchTo().alert;
+Alert.accept();
+Alert.dismiss();
+
+Mouse over using Actions class:
+Actions action = new Actions(driver);
+action.moveToElement(WebElement).perform();
+
+Drag and drop element using Actions class:
+Actions actions = new Actions(driver);
+action.dragAndDrop(fromElement,toElement).build().perform();
+(or)
+actions.hold(fromElement).moveTo(toElement).release().build().perform();
+Working with Sliders using Actions class
+actions.dragAndDropBy(WebElement,x-offset,y-offset).perform(); x-> move horizontally; y- move vertically 
+Page Object Model:
+WebElements and web operations are created as a method on page class, called required method wherever applicable on each test class, to reduce lines of code and simplicity.
+Page Factory : Inbuilt in page object model, used @FindBy annotation to identify the webelement and uses init element method to initialize the webelements identified.
+Using pageFactory in Page class
+Class SearchPage{
+WebDriver driver=null;
+@FindBy(id=”value)
+WebElement element1;
+In Constructor, we initialize the page factory and webdriver instance
+public SearchPage(WebDriver driver) {
+this.driver=driver;
+PageFactory.initElements(driver,this);
+}
+public void clickElement() {
+element1.click();
+} 
+}
+
+Log4j2.x -> useful for logging the information on each block of testing, uses different level of loggers to verify the test progress of execution
+Has 3 components : Logger -> provides different types of loggers can be used at different levels 
+		   Appenders -> Used to print output to console/file/database.
+		Layouts -> Used to provide different styles to print output.
+Without configuration file: 
+When log4j2.x is used without configuration file, root logger will print only error and fatal, below that won’t be printed without configuration file. 
+Log4j2.x configuration file -> can contain file type as YAML/yml, Json,jsn, XML file types.
+Simple Log4j.xml configuration file
+<Configuration>
+<Appenders>
+<Console name=”Console”>
+<PatternLayout pattern=”%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%n” />
+</Console>
+</Appenders>
+<Loggers>
+<Root level=”info”>
+<Appender ref=”Console”>
+</Root>
+</Loggers>
+</Configuration>
+Ø	Xml file has to be linked added to the project source from build path in order to consider the xml file during execution.
+	
+Log4j.xml using file 
+<Configuration>
+<Properties>
+<property name=”basepath”>.logs</property> (.) represents current project folder
+</Properties>
+<Appenders>
+<RollingFile name=”File” filename=${basepath}/app.log” filePattern=”${basepath}/app-%d{yyyy-MM-dd}.log”>
+<PatternLayout pattern=”%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%n” />
+<Policies>
+<TimeBasedTriggeringPolicy interval=1 modulate=”true”/>
+<SizeBasedTriggeringPolicy size=”100KB”/>
+</Policies>
+</Appenders>
+<Loggers>
+<Root level=”info”>
+<Appender ref=”File”>
+</Root>
+</Loggers>
+</Configuration>
+
+Log4j2.x with custom loggers
+
+<Configuration>
+<Properties>
+<property name=”basepath”>.logs</property> (.) represents current project folder
+</Properties>
+<Appenders>
+<RollingFile name=”File” filename=${basepath}/app.log” filePattern=”${basepath}/app-%d{yyyy-MM-dd}.log”>
+<PatternLayout pattern=”%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%n” />
+<Policies>
+<TimeBasedTriggeringPolicy interval=1 modulate=”true”/>
+<SizeBasedTriggeringPolicy size=”100KB”/>
+</Policies>
+</Appenders>
+<Loggers>
+<Root level=”info”>
+<Appender ref=”File”>
+</Root>
+<Logger name=”pkg_name” level = “info”>
+<Appender ref =”File”>
+</Loggers>
+</Configuration>
+
+TestNG
+Type of testing framework, makes writing tests simple. 
+Uses annotation, grouping, sequencing, data providers. 
+Different annotations in TestNG 
+@BeforeSuite – Executes before the suite tag in xml 
+@BeforeTest – Executes before the test tag in xml 
+@BeforeClass – Executes before running each test class
+@BeforeMethod – Executes before any test method 
+@Test – Executes test method 
+@AfterMethod – Executes after any test method
+@AFterClass – Executes after test class 
+@AfterTest – Executes after test tag in xml file 
+@AfterSuite – Executes after suite tag in xml file.
+
+To use TestNG, we have to install plugin and few jar files and we have to work on TestNG Class instead of normal class file. 
+Asserts – Assert.assertTrue(condition) – if the condition fails then the method fails and stops block execution.
+	Assert.assertFalse(condition) – if the condition passes then the method fails and stops block execution.
+	Assert.assertEquals(value) – if the value doesn’t match, then the method fails and stops block execution.
+SoftAssert – 
+WHY TO USE: When we have multiple asserts on a test method and using normal assert fails then sequencing assert will also fails, to overcome this issue we use soft assert. 
+SoftAssert sa = new SoftAssert();
+sa.Assert.assertEquals(value);
+sa.Assert.assertTrue(condition);
+sa.assertAll(); -> Used to classify the failure 
+
+Running a TestNG test suite xml file 
+<Suite name=”someNmae”>
+<Test name = “someame”> 
+<Classes>
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+</Suite>
+
+Running BeforeSuite and AfterSuite in TEstnG test case
+Which are prerequisites  and post requisites that needs to be executed when running test cases
+Ø	Create a class called base suite and invoke before and after suite method in it 
+Ø	Extend the base suite class on test classes so that it will run before and after the test executes.
+We can able to create multiple test tags on TEstng xml files and use BeforeTest and AfterTest annotations. 
+<Suite name=”someNmae”>
+<Test name = “someame”> 
+<Classes>
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+<Test name =”SEcondsTest> 
+<Classes>
+<Class name =”pkg.Lastclass”> </Class>
+</Classes>
+</Test>
+</Suite>  and uses @BeforeTest and @AfterTest annotation methods on baseSuite class to run before and after test methods accordingly.
+
+Setting priority on test methods 
+Syntax  - @Test(priority=0)  , priority starts from 0 and based on the index the test methods starts executing on the number sequence and test method name sequencing will be ignored. 
+
+Grouping test methods 
+
+Ø	Syntax : @Test (groups ={“name”, “name1”} à can have multiple group name categories. 
+Ø	In TestNG xml file, 
+ <Suite name=”someNmae”>
+<Test name = “someame”> 
+<groups >
+<run>
+<include name=”group_name”>
+</run>
+<Classes>
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+</Suite>
+Ø	To configure multiple groups on xml
+<Suite name =”Suitenmae”>
+<Test name=”Testname “>
+<groups>
+<define name=”somename” >
+<include name =”group_name”>
+<include name =”group1_name”>
+</define>
+<run>
+<include name=”somname”>
+</run>
+</groups>
+<Classes>
+<Class name=”test1” > </Class>
+</Classes>
+</Test>
+</Suite>
+
+Dependent Test methods:
+Syntax: @Test(dependsOnMethods ={“testmethodname”, “test1”}) -> can have multiple dependent methods.
+For ex, if one of the dependent test methods fails then the following dependent test methods will be skipped. 
+To overcome this, we use the syntax:  @Test(dependsOnMethods ={“test1},alwaysRun=true) à so that dependent test methods won’t be skipped. 
+
+Disable a test method:
+Syntax : @Test(enabled=false) won’t execute the test method.
+
+Setting timeout on test method 
+Syntax:  @Test(timeout=100) -> it will  wait for 100 milli seconds and if the test doesn’t completes within time frame, then it will fail the test case. 
+
+Preserve order of execution from TestnG xml file:
+<Suite name=”someNmae”>
+<Test name = “someame” preserve-order=true>  à will execute the class files in the order it is specified, if kept as false , it will ignore the order and executes based on the class filename. 
+<Classes>
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+</Suite>
+
+Provide Parameters to test methods
+Ø	In TestNG xml file, 
+
+<Suite name=”someNmae”>
+<Test name = “someame” 
+<parameter name = “browser” value=”firefox”> </parameter>
+<parameter name=”platform” value=”window”></parameter>
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+</Suite>
+
+Ø	In Test class, @Test
+@Parameters ({“browser”, “platform”}) -> pick the one from org.testng
+Public void testMethod() {
+Syso(browser, response); à will print the value specified in xml, run through xml file. 
+
+Running tests in parallel.
+Ø	Add tag parallel in TestnG xml and specify the value as class/test/methods (commonly used) 
+<Suite name=”someNmae” parallel =”methods” thread-count=”2”>
+<Test name = “someame” 
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+<Test name = “someame” 
+<Class name =”pkg.classname”></Class>
+<Class name=”pkg.classname”></Class>
+</Classes>
+</Test>
+</Suite>
+
+Data providers in Testng 
+Ø	When user wants to test same test case with multiple sets of test data, we can achieve this with data providers in Testng.
+First create data provider method with annotation.
+@DataProvider(name=”inputs”)
+Public Object[][] getInputs(){
+return Object[][] {
+{“audi”, “000”},
+{“bmw”, “flower”}
+};
+}
+
+Use it in the test method with reference name.
+@Test(dataProvider=”inputs”)
+Ø	When data provider method is implemented in different class, then in the test method we have to specify as 
+@Test(dataProvider=”inputs”, dataProviderClass=ClassName.class)
+
+ITestResult interface – Testng 
+Ø	Used to provide detail of test method executed. 
+ITestResult.SUCCESS/FAILURE/SKIPPED/NOTRUN (different types)
+testResult.getMethod().getMethodName() or testResult.getName() à fetches test method name. 
+
+Listeners -> Listens when every method in test class is executed.  
+
+IInvokedMethod Listener: Implements 2 methods, BeforeInvocation and AfterInvocation. Both has argument  (IInvokedMethod, ITestResult)
+Both the method runs before and after every method in the test class where listeners annotation is specified.
+Syntax: @Listeners(ListenerClass.class) à needs to be specified before class starts.
+
+ITest Listener: Implements following methods 
+onStart(ITestContext context)  à Executes before <test> tag in xml file, can be used to list out the methods in test class file using ITestNGMethod  methods[] = context.getAllTestMethods();
+onFinish(ITestContext context) à Executes after <test> tag in xml file.
+onTestStarts(ITestResult result) à Executes before test method in test class
+onTestSuccess(ITestResult result) à Executes when test method is successful
+onTestFailed(ITestResult result) à Executes when test method is failed
+onTestSkipped(ITestResult result) à Executes when test method is skipped
+onTestFailedWithinPassPercentage(ITestResult result) à Rarely used, ignore this. 
+
+ISuite Listener : Implements following methods 
+onStart(ITestSuite suite) à Executes before <Suite> tag in xml 
+onFinish(ITestSuite suite) à Executes after <Suite> tag in xml
+
+TestNG reports and logs 
+Ø	Reporter.log(“text”,false) à when used as false, the message will be ignored, when true prints the message to console. 
+Ø	Generates report with pass/fail/skipped tests.
+
+
+Advanced Reporting: 
+Using ExtentReport 
+Syntax: 
+ExtentReports report;
+ExtentTest test;
+We can add, report.addSystemInfo(“platform”,”windows”)
+test=report.startTest(“Verify something”);
+test.log(LogStatus.INFO,”description of the test step”);
+test.log(LogStatus.PASS”,”Passed”);
+test.log(LogStatus.FAIL”,”Failed”);
+report.endTest(test);
+report.flush();
+
+To take screenshot using extent report: test.captureScreenshot(“path”);
+
+
+
+Thanks,
+Arun 
+
