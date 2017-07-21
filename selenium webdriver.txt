@@ -469,6 +469,7 @@ To run w.r.t TestNG xml we have to create surefire plugin with build tag and spe
 if we need to set multiple profiles of TestNG xmls then we need to use profiles under profiles above step will be done. 
 Each profile for different types of tests -> Regression, sanity etc. 
 Command: mvn test -P$profilename$
+Surefire plugin has the tendency to create reports as well under target folder of maven -> Index.html & emailable-report.html
 Thanks,
 Arun 
 
