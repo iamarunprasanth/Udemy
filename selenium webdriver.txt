@@ -1,66 +1,66 @@
 
-WebDriver driver ñ Type of class used to implement the selenium web driver functionalities. 
+WebDriver driver ‚Äì Type of class used to implement the selenium web driver functionalities. 
 WebElement element  - returns WebElement used to store web element identified on a webpage.
-By ñ Type of class derives different kind of locators can be used to identify web elements. 
+By ‚Äì Type of class derives different kind of locators can be used to identify web elements. 
 Different locators: Id, name, css, xpath, link text, tag 
 Syntax for identifying web element using locator
-driver.findElemen(By.<locator>(ìvalueî));
+driver.findElemen(By.<locator>(‚Äúvalue‚Äù));
 Advanced locators CSS:
-Syntax ñ tag_name[attribute=ívalueí]
+Syntax ‚Äì tag_name[attribute=‚Äôvalue‚Äô]
 # - represents id
-. ñ represents class 
+. ‚Äì represents class 
 So, tag_name#value / tag_name.value is achievable. 
-Wild cards ñ ^ represents value starts with
+Wild cards ‚Äì ^ represents value starts with
 	         $ represents value ends with
 	<star> represents value containing
 
 Using Fieldset -> when there is no dedicated parent tag/attributes to traverse through web element, we can achieve the same using FIELDSET as well. 
-FIELDSETS are type html tags, syntax: fieldset>tag_name=ívalueí or fieldset>#id_value or fieldset>.class_value
-Using wild cards : fieldset> tag_name ^/$/* =ívalueí 
+FIELDSETS are type html tags, syntax: fieldset>tag_name=‚Äôvalue‚Äô or fieldset>#id_value or fieldset>.class_value
+Using wild cards : fieldset> tag_name ^/$/* =‚Äôvalue‚Äô 
 Advanced locators XPath:
-Syntax ñ tag_name[@attribute=ívalueí]
-2 types of Xpath ñ absolute and relative
-Absolute ñ provides the completes html structure till the web element (html/body/etc)
-Relative ñ provides the xpath from its parent tag ; itís always recommended to use relative xpath as change in html structure will affect the absolute xpath. 
+Syntax ‚Äì tag_name[@attribute=‚Äôvalue‚Äô]
+2 types of Xpath ‚Äì absolute and relative
+Absolute ‚Äì provides the completes html structure till the web element (html/body/etc)
+Relative ‚Äì provides the xpath from its parent tag ; it‚Äôs always recommended to use relative xpath as change in html structure will affect the absolute xpath. 
 Wild cards in xpath:
-//tag_name[starts-with(@attribute,ívalueí)]
-//tag_name[ends-with(@attribute,ívalueí)]
-//tag_name[(contains(@attribute,ívalue)]
+//tag_name[starts-with(@attribute,‚Äôvalue‚Äô)]
+//tag_name[ends-with(@attribute,‚Äôvalue‚Äô)]
+//tag_name[(contains(@attribute,‚Äôvalue)]
 When traverse through tags where proper attribute is not present:
 Parent-sibling/preceding-sibling/following-sibling
-//tag_name[contains(text(),ívalueí)]//parent-sibiling::tag_name
-Assert ñ will fail the test step but still proceed with next step 
-Verify ñ will fail the test step also stops the execution 
-Junit test - @BeforeClass ñ Executes before class
-@AfterClass ñ Executes after class
-@Before ñ Executes before test method 
-@After ñ Executes after test method 
-@Test ñ Executes the test method, when multiple test methods are placed ñ order of execution will be based on alphabetical order of test method name.
-Click and type on a webelement ñ click.sendKeys(ìtextî);
-Navigate b/w web pages ñ driver.window.navigate().back/forward()
-State of the webElement ñ IsEnabled() -> returns true/false
-To select multiple value from drop down ñ we have to use Select class 
+//tag_name[contains(text(),‚Äôvalue‚Äô)]//parent-sibiling::tag_name
+Assert ‚Äì will fail the test step but still proceed with next step 
+Verify ‚Äì will fail the test step also stops the execution 
+Junit test - @BeforeClass ‚Äì Executes before class
+@AfterClass ‚Äì Executes after class
+@Before ‚Äì Executes before test method 
+@After ‚Äì Executes after test method 
+@Test ‚Äì Executes the test method, when multiple test methods are placed ‚Äì order of execution will be based on alphabetical order of test method name.
+Click and type on a webelement ‚Äì click.sendKeys(‚Äútext‚Äù);
+Navigate b/w web pages ‚Äì driver.window.navigate().back/forward()
+State of the webElement ‚Äì IsEnabled() -> returns true/false
+To select multiple value from drop down ‚Äì we have to use Select class 
 We need to select an obj reference and pass the drop down element as parameter
 We can select by: selectByIndex,selectByValue,selectByVisibleText; to get all values  we use method getAllSelectedOptions
 Hidden elements are just not shown in webpage but still shown in DOM
-Get text on an element ñ element.getText(ìpass locatorî) method 
-Get value of element attribute ñ element.getAttribute(ìpass locatorî)
-Check if element is present ñ IsPresent() method
-Implicit wait ñ waits for specified time period on the webpage, when the elements are not loaded even after the specified time period ñ once again checks for the specified time period and throws an exception
+Get text on an element ‚Äì element.getText(‚Äúpass locator‚Äù) method 
+Get value of element attribute ‚Äì element.getAttribute(‚Äúpass locator‚Äù)
+Check if element is present ‚Äì IsPresent() method
+Implicit wait ‚Äì waits for specified time period on the webpage, when the elements are not loaded even after the specified time period ‚Äì once again checks for the specified time period and throws an exception
 Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS)
-Explicit wait ñ waits for specified time until some condition(element to load,, visible, clickable) , when the condition doesnít meet until the specified time period it will stop there. Explicit wait checks for every 500 milli seconds for the condition until the specified time period. 
+Explicit wait ‚Äì waits for specified time until some condition(element to load,, visible, clickable) , when the condition doesn‚Äôt meet until the specified time period it will stop there. Explicit wait checks for every 500 milli seconds for the condition until the specified time period. 
 WebDriverWait wait = new WebDriverWait(driver, 10);
 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
 Using JavaScript Commands: 
 JavascriptExecutor js;
 To navigate to some page
-Js.executeScript(ìwindow.location, ëurlíî);
+Js.executeScript(‚Äúwindow.location, ‚Äòurl‚Äô‚Äù);
 To find element
-Js.executeScript(ìreturn document.getElementById(ënameí);î)
-Js.executeScript(ìreturn document.getElementsByClass(ënameí);î)
+Js.executeScript(‚Äúreturn document.getElementById(‚Äòname‚Äô);‚Äù)
+Js.executeScript(‚Äúreturn document.getElementsByClass(‚Äòname‚Äô);‚Äù)
 Size of the window using js
-Js.executeScript(ìreturn window.innerHeightî)
-Js.executeScript(ìreturn window.innerWidthî)
+Js.executeScript(‚Äúreturn window.innerHeight‚Äù)
+Js.executeScript(‚Äúreturn window.innerWidth‚Äù)
 // Scroll Down
 		js.executeScript("window.scrollBy(0, 1900);");
 		Thread.sleep(2000);
@@ -72,7 +72,7 @@ js.executeScript("arguments[0].scrollIntoView(true);",element);
 			
 Taking screenshot:
 File file = ((takesScreenshot)driver).getScreenshotAs(OutputType.FILE)
-FileUtil.copyFile(file, new File(ìdirectory+filename));
+FileUtil.copyFile(file, new File(‚Äúdirectory+filename));
 Window Handles: basically a new window
 Switching window handles:
 String parent = driver.getWindowHandle();
@@ -111,7 +111,7 @@ Page Factory : Inbuilt in page object model, used @FindBy annotation to identify
 Using pageFactory in Page class
 Class SearchPage{
 WebDriver driver=null;
-@FindBy(id=îvalue)
+@FindBy(id=‚Äùvalue)
 WebElement element1;
 In Constructor, we initialize the page factory and webdriver instance
 public SearchPage(WebDriver driver) {
@@ -128,39 +128,39 @@ Has 3 components : Logger -> provides different types of loggers can be used at 
 		   Appenders -> Used to print output to console/file/database.
 		Layouts -> Used to provide different styles to print output.
 Without configuration file: 
-When log4j2.x is used without configuration file, root logger will print only error and fatal, below that wonít be printed without configuration file. 
+When log4j2.x is used without configuration file, root logger will print only error and fatal, below that won‚Äôt be printed without configuration file. 
 Log4j2.x configuration file -> can contain file type as YAML/yml, Json,jsn, XML file types.
 Simple Log4j.xml configuration file
 <Configuration>
 <Appenders>
-<Console name=îConsoleî>
-<PatternLayout pattern=î%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%nî />
+<Console name=‚ÄùConsole‚Äù>
+<PatternLayout pattern=‚Äù%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%n‚Äù />
 </Console>
 </Appenders>
 <Loggers>
-<Root level=îinfoî>
-<Appender ref=îConsoleî>
+<Root level=‚Äùinfo‚Äù>
+<Appender ref=‚ÄùConsole‚Äù>
 </Root>
 </Loggers>
 </Configuration>
-ÿ	Xml file has to be linked added to the project source from build path in order to consider the xml file during execution.
+√ò	Xml file has to be linked added to the project source from build path in order to consider the xml file during execution.
 	
 Log4j.xml using file 
 <Configuration>
 <Properties>
-<property name=îbasepathî>.logs</property> (.) represents current project folder
+<property name=‚Äùbasepath‚Äù>.logs</property> (.) represents current project folder
 </Properties>
 <Appenders>
-<RollingFile name=îFileî filename=${basepath}/app.logî filePattern=î${basepath}/app-%d{yyyy-MM-dd}.logî>
-<PatternLayout pattern=î%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%nî />
+<RollingFile name=‚ÄùFile‚Äù filename=${basepath}/app.log‚Äù filePattern=‚Äù${basepath}/app-%d{yyyy-MM-dd}.log‚Äù>
+<PatternLayout pattern=‚Äù%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%n‚Äù />
 <Policies>
-<TimeBasedTriggeringPolicy interval=1 modulate=îtrueî/>
-<SizeBasedTriggeringPolicy size=î100KBî/>
+<TimeBasedTriggeringPolicy interval=1 modulate=‚Äùtrue‚Äù/>
+<SizeBasedTriggeringPolicy size=‚Äù100KB‚Äù/>
 </Policies>
 </Appenders>
 <Loggers>
-<Root level=îinfoî>
-<Appender ref=îFileî>
+<Root level=‚Äùinfo‚Äù>
+<Appender ref=‚ÄùFile‚Äù>
 </Root>
 </Loggers>
 </Configuration>
@@ -169,22 +169,22 @@ Log4j2.x with custom loggers
 
 <Configuration>
 <Properties>
-<property name=îbasepathî>.logs</property> (.) represents current project folder
+<property name=‚Äùbasepath‚Äù>.logs</property> (.) represents current project folder
 </Properties>
 <Appenders>
-<RollingFile name=îFileî filename=${basepath}/app.logî filePattern=î${basepath}/app-%d{yyyy-MM-dd}.logî>
-<PatternLayout pattern=î%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%nî />
+<RollingFile name=‚ÄùFile‚Äù filename=${basepath}/app.log‚Äù filePattern=‚Äù${basepath}/app-%d{yyyy-MM-dd}.log‚Äù>
+<PatternLayout pattern=‚Äù%d{HH:mm:ss.SSS} %-5level %c{1} -%msg%n‚Äù />
 <Policies>
-<TimeBasedTriggeringPolicy interval=1 modulate=îtrueî/>
-<SizeBasedTriggeringPolicy size=î100KBî/>
+<TimeBasedTriggeringPolicy interval=1 modulate=‚Äùtrue‚Äù/>
+<SizeBasedTriggeringPolicy size=‚Äù100KB‚Äù/>
 </Policies>
 </Appenders>
 <Loggers>
-<Root level=îinfoî>
-<Appender ref=îFileî>
+<Root level=‚Äùinfo‚Äù>
+<Appender ref=‚ÄùFile‚Äù>
 </Root>
-<Logger name=îpkg_nameî level = ìinfoî>
-<Appender ref =îFileî>
+<Logger name=‚Äùpkg_name‚Äù level = ‚Äúinfo‚Äù>
+<Appender ref =‚ÄùFile‚Äù>
 </Loggers>
 </Configuration>
 
@@ -192,21 +192,21 @@ TestNG
 Type of testing framework, makes writing tests simple. 
 Uses annotation, grouping, sequencing, data providers. 
 Different annotations in TestNG 
-@BeforeSuite ñ Executes before the suite tag in xml 
-@BeforeTest ñ Executes before the test tag in xml 
-@BeforeClass ñ Executes before running each test class
-@BeforeMethod ñ Executes before any test method 
-@Test ñ Executes test method 
-@AfterMethod ñ Executes after any test method
-@AFterClass ñ Executes after test class 
-@AfterTest ñ Executes after test tag in xml file 
-@AfterSuite ñ Executes after suite tag in xml file.
+@BeforeSuite ‚Äì Executes before the suite tag in xml 
+@BeforeTest ‚Äì Executes before the test tag in xml 
+@BeforeClass ‚Äì Executes before running each test class
+@BeforeMethod ‚Äì Executes before any test method 
+@Test ‚Äì Executes test method 
+@AfterMethod ‚Äì Executes after any test method
+@AFterClass ‚Äì Executes after test class 
+@AfterTest ‚Äì Executes after test tag in xml file 
+@AfterSuite ‚Äì Executes after suite tag in xml file.
 
 To use TestNG, we have to install plugin and few jar files and we have to work on TestNG Class instead of normal class file. 
-Asserts ñ Assert.assertTrue(condition) ñ if the condition fails then the method fails and stops block execution.
-	Assert.assertFalse(condition) ñ if the condition passes then the method fails and stops block execution.
-	Assert.assertEquals(value) ñ if the value doesnít match, then the method fails and stops block execution.
-SoftAssert ñ 
+Asserts ‚Äì Assert.assertTrue(condition) ‚Äì if the condition fails then the method fails and stops block execution.
+	Assert.assertFalse(condition) ‚Äì if the condition passes then the method fails and stops block execution.
+	Assert.assertEquals(value) ‚Äì if the value doesn‚Äôt match, then the method fails and stops block execution.
+SoftAssert ‚Äì 
 WHY TO USE: When we have multiple asserts on a test method and using normal assert fails then sequencing assert will also fails, to overcome this issue we use soft assert. 
 SoftAssert sa = new SoftAssert();
 sa.Assert.assertEquals(value);
@@ -214,30 +214,30 @@ sa.Assert.assertTrue(condition);
 sa.assertAll(); -> Used to classify the failure 
 
 Running a TestNG test suite xml file 
-<Suite name=îsomeNmaeî>
-<Test name = ìsomeameî> 
+<Suite name=‚ÄùsomeNmae‚Äù>
+<Test name = ‚Äúsomeame‚Äù> 
 <Classes>
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
 </Suite>
 
 Running BeforeSuite and AfterSuite in TEstnG test case
 Which are prerequisites  and post requisites that needs to be executed when running test cases
-ÿ	Create a class called base suite and invoke before and after suite method in it 
-ÿ	Extend the base suite class on test classes so that it will run before and after the test executes.
+√ò	Create a class called base suite and invoke before and after suite method in it 
+√ò	Extend the base suite class on test classes so that it will run before and after the test executes.
 We can able to create multiple test tags on TEstng xml files and use BeforeTest and AfterTest annotations. 
-<Suite name=îsomeNmaeî>
-<Test name = ìsomeameî> 
+<Suite name=‚ÄùsomeNmae‚Äù>
+<Test name = ‚Äúsomeame‚Äù> 
 <Classes>
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
-<Test name =îSEcondsTest> 
+<Test name =‚ÄùSEcondsTest> 
 <Classes>
-<Class name =îpkg.Lastclassî> </Class>
+<Class name =‚Äùpkg.Lastclass‚Äù> </Class>
 </Classes>
 </Test>
 </Suite>  and uses @BeforeTest and @AfterTest annotation methods on baseSuite class to run before and after test methods accordingly.
@@ -247,135 +247,135 @@ Syntax  - @Test(priority=0)  , priority starts from 0 and based on the index the
 
 Grouping test methods 
 
-ÿ	Syntax : @Test (groups ={ìnameî, ìname1î} ‡ can have multiple group name categories. 
-ÿ	In TestNG xml file, 
- <Suite name=îsomeNmaeî>
-<Test name = ìsomeameî> 
+√ò	Syntax : @Test (groups ={‚Äúname‚Äù, ‚Äúname1‚Äù} √† can have multiple group name categories. 
+√ò	In TestNG xml file, 
+ <Suite name=‚ÄùsomeNmae‚Äù>
+<Test name = ‚Äúsomeame‚Äù> 
 <groups >
 <run>
-<include name=îgroup_nameî>
+<include name=‚Äùgroup_name‚Äù>
 </run>
 <Classes>
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
 </Suite>
-ÿ	To configure multiple groups on xml
-<Suite name =îSuitenmaeî>
-<Test name=îTestname ì>
+√ò	To configure multiple groups on xml
+<Suite name =‚ÄùSuitenmae‚Äù>
+<Test name=‚ÄùTestname ‚Äú>
 <groups>
-<define name=îsomenameî >
-<include name =îgroup_nameî>
-<include name =îgroup1_nameî>
+<define name=‚Äùsomename‚Äù >
+<include name =‚Äùgroup_name‚Äù>
+<include name =‚Äùgroup1_name‚Äù>
 </define>
 <run>
-<include name=îsomnameî>
+<include name=‚Äùsomname‚Äù>
 </run>
 </groups>
 <Classes>
-<Class name=îtest1î > </Class>
+<Class name=‚Äùtest1‚Äù > </Class>
 </Classes>
 </Test>
 </Suite>
 
 Dependent Test methods:
-Syntax: @Test(dependsOnMethods ={ìtestmethodnameî, ìtest1î}) -> can have multiple dependent methods.
+Syntax: @Test(dependsOnMethods ={‚Äútestmethodname‚Äù, ‚Äútest1‚Äù}) -> can have multiple dependent methods.
 For ex, if one of the dependent test methods fails then the following dependent test methods will be skipped. 
-To overcome this, we use the syntax:  @Test(dependsOnMethods ={ìtest1},alwaysRun=true) ‡ so that dependent test methods wonít be skipped. 
+To overcome this, we use the syntax:  @Test(dependsOnMethods ={‚Äútest1},alwaysRun=true) √† so that dependent test methods won‚Äôt be skipped. 
 
 Disable a test method:
-Syntax : @Test(enabled=false) wonít execute the test method.
+Syntax : @Test(enabled=false) won‚Äôt execute the test method.
 
 Setting timeout on test method 
-Syntax:  @Test(timeout=100) -> it will  wait for 100 milli seconds and if the test doesnít completes within time frame, then it will fail the test case. 
+Syntax:  @Test(timeout=100) -> it will  wait for 100 milli seconds and if the test doesn‚Äôt completes within time frame, then it will fail the test case. 
 
 Preserve order of execution from TestnG xml file:
-<Suite name=îsomeNmaeî>
-<Test name = ìsomeameî preserve-order=true>  ‡ will execute the class files in the order it is specified, if kept as false , it will ignore the order and executes based on the class filename. 
+<Suite name=‚ÄùsomeNmae‚Äù>
+<Test name = ‚Äúsomeame‚Äù preserve-order=true>  √† will execute the class files in the order it is specified, if kept as false , it will ignore the order and executes based on the class filename. 
 <Classes>
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
 </Suite>
 
 Provide Parameters to test methods
-ÿ	In TestNG xml file, 
+√ò	In TestNG xml file, 
 
-<Suite name=îsomeNmaeî>
-<Test name = ìsomeameî 
-<parameter name = ìbrowserî value=îfirefoxî> </parameter>
-<parameter name=îplatformî value=îwindowî></parameter>
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+<Suite name=‚ÄùsomeNmae‚Äù>
+<Test name = ‚Äúsomeame‚Äù 
+<parameter name = ‚Äúbrowser‚Äù value=‚Äùfirefox‚Äù> </parameter>
+<parameter name=‚Äùplatform‚Äù value=‚Äùwindow‚Äù></parameter>
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
 </Suite>
 
-ÿ	In Test class, @Test
-@Parameters ({ìbrowserî, ìplatformî}) -> pick the one from org.testng
+√ò	In Test class, @Test
+@Parameters ({‚Äúbrowser‚Äù, ‚Äúplatform‚Äù}) -> pick the one from org.testng
 Public void testMethod() {
-Syso(browser, response); ‡ will print the value specified in xml, run through xml file. 
+Syso(browser, response); √† will print the value specified in xml, run through xml file. 
 
 Running tests in parallel.
-ÿ	Add tag parallel in TestnG xml and specify the value as class/test/methods (commonly used) 
-<Suite name=îsomeNmaeî parallel =îmethodsî thread-count=î2î>
-<Test name = ìsomeameî 
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+√ò	Add tag parallel in TestnG xml and specify the value as class/test/methods (commonly used) 
+<Suite name=‚ÄùsomeNmae‚Äù parallel =‚Äùmethods‚Äù thread-count=‚Äù2‚Äù>
+<Test name = ‚Äúsomeame‚Äù 
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
-<Test name = ìsomeameî 
-<Class name =îpkg.classnameî></Class>
-<Class name=îpkg.classnameî></Class>
+<Test name = ‚Äúsomeame‚Äù 
+<Class name =‚Äùpkg.classname‚Äù></Class>
+<Class name=‚Äùpkg.classname‚Äù></Class>
 </Classes>
 </Test>
 </Suite>
 
 Data providers in Testng 
-ÿ	When user wants to test same test case with multiple sets of test data, we can achieve this with data providers in Testng.
+√ò	When user wants to test same test case with multiple sets of test data, we can achieve this with data providers in Testng.
 First create data provider method with annotation.
-@DataProvider(name=îinputsî)
+@DataProvider(name=‚Äùinputs‚Äù)
 Public Object[][] getInputs(){
 return Object[][] {
-{ìaudiî, ì000î},
-{ìbmwî, ìflowerî}
+{‚Äúaudi‚Äù, ‚Äú000‚Äù},
+{‚Äúbmw‚Äù, ‚Äúflower‚Äù}
 };
 }
 
 Use it in the test method with reference name.
-@Test(dataProvider=îinputsî)
-ÿ	When data provider method is implemented in different class, then in the test method we have to specify as 
-@Test(dataProvider=îinputsî, dataProviderClass=ClassName.class)
+@Test(dataProvider=‚Äùinputs‚Äù)
+√ò	When data provider method is implemented in different class, then in the test method we have to specify as 
+@Test(dataProvider=‚Äùinputs‚Äù, dataProviderClass=ClassName.class)
 
-ITestResult interface ñ Testng 
-ÿ	Used to provide detail of test method executed. 
+ITestResult interface ‚Äì Testng 
+√ò	Used to provide detail of test method executed. 
 ITestResult.SUCCESS/FAILURE/SKIPPED/NOTRUN (different types)
-testResult.getMethod().getMethodName() or testResult.getName() ‡ fetches test method name. 
+testResult.getMethod().getMethodName() or testResult.getName() √† fetches test method name. 
 
 Listeners -> Listens when every method in test class is executed.  
 
 IInvokedMethod Listener: Implements 2 methods, BeforeInvocation and AfterInvocation. Both has argument  (IInvokedMethod, ITestResult)
 Both the method runs before and after every method in the test class where listeners annotation is specified.
-Syntax: @Listeners(ListenerClass.class) ‡ needs to be specified before class starts.
+Syntax: @Listeners(ListenerClass.class) √† needs to be specified before class starts.
 
 ITest Listener: Implements following methods 
-onStart(ITestContext context)  ‡ Executes before <test> tag in xml file, can be used to list out the methods in test class file using ITestNGMethod  methods[] = context.getAllTestMethods();
-onFinish(ITestContext context) ‡ Executes after <test> tag in xml file.
-onTestStarts(ITestResult result) ‡ Executes before test method in test class
-onTestSuccess(ITestResult result) ‡ Executes when test method is successful
-onTestFailed(ITestResult result) ‡ Executes when test method is failed
-onTestSkipped(ITestResult result) ‡ Executes when test method is skipped
-onTestFailedWithinPassPercentage(ITestResult result) ‡ Rarely used, ignore this. 
+onStart(ITestContext context)  √† Executes before <test> tag in xml file, can be used to list out the methods in test class file using ITestNGMethod  methods[] = context.getAllTestMethods();
+onFinish(ITestContext context) √† Executes after <test> tag in xml file.
+onTestStarts(ITestResult result) √† Executes before test method in test class
+onTestSuccess(ITestResult result) √† Executes when test method is successful
+onTestFailed(ITestResult result) √† Executes when test method is failed
+onTestSkipped(ITestResult result) √† Executes when test method is skipped
+onTestFailedWithinPassPercentage(ITestResult result) √† Rarely used, ignore this. 
 
 ISuite Listener : Implements following methods 
-onStart(ITestSuite suite) ‡ Executes before <Suite> tag in xml 
-onFinish(ITestSuite suite) ‡ Executes after <Suite> tag in xml
+onStart(ITestSuite suite) √† Executes before <Suite> tag in xml 
+onFinish(ITestSuite suite) √† Executes after <Suite> tag in xml
 
 TestNG reports and logs 
-ÿ	Reporter.log(ìtextî,false) ‡ when used as false, the message will be ignored, when true prints the message to console. 
-ÿ	Generates report with pass/fail/skipped tests.
+√ò	Reporter.log(‚Äútext‚Äù,false) √† when used as false, the message will be ignored, when true prints the message to console. 
+√ò	Generates report with pass/fail/skipped tests.
 
 
 Advanced Reporting: 
@@ -383,17 +383,76 @@ Using ExtentReport
 Syntax: 
 ExtentReports report;
 ExtentTest test;
-We can add, report.addSystemInfo(ìplatformî,îwindowsî)
-test=report.startTest(ìVerify somethingî);
-test.log(LogStatus.INFO,îdescription of the test stepî);
-test.log(LogStatus.PASSî,îPassedî);
-test.log(LogStatus.FAILî,îFailedî);
+We can add, report.addSystemInfo(‚Äúplatform‚Äù,‚Äùwindows‚Äù)
+test=report.startTest(‚ÄúVerify something‚Äù);
+test.log(LogStatus.INFO,‚Äùdescription of the test step‚Äù);
+test.log(LogStatus.PASS‚Äù,‚ÄùPassed‚Äù);
+test.log(LogStatus.FAIL‚Äù,‚ÄùFailed‚Äù);
 report.endTest(test);
 report.flush();
 
-To take screenshot using extent report: test.captureScreenshot(ìpathî);
+To take screenshot using extent report: test.captureScreenshot(‚Äúpath‚Äù);
 
+Data driven testing:
+we use apache poi jars to read/write excel values 
+FileInputStream, ExcelWBook(path), ExcelWSheet.getSheet(sheetName)
+XSSFWorkBook, XSSFSheet, XSSFCell.
+getRow().getCell().getStringCellValue()
 
+To write to a file, we use FileOutputStream, ExcelWCell.setContent() -> we use for writing to any of the target cell. 
+
+Working with Firefox profiles:
+used when we need specific proxy settings and SSL certificate apart from normal we use Firefox profiles. 
+In Run, firefox.exe -p -> to open firefox profiles. 
+Profilesini profiles = new Profilesini();
+profiles.getprofile("providenameofprofile")
+
+Chrome profiles -> used for invoking extensions in chrome. 
+Goto extensions, check dev mode, copy the path till version of the extension, click on pack extension. 
+it will create crx and pem files. 
+copy path of crx file and use ChromeOptions() options = new ChromeOptions();
+options.add(new File("pathofcrxfile"));
+driver = new ChromeDriver(options));
+File upload using Robot class:
+StringSelector ss = new StringSelector(pathoffile);
+// copying to clipboard.
+ToolKit.getDefaultTookKit().getSystemClipBoard().setContent()
+Robot robot = new Robot();
+robot.keyPress(KEYEVENT.Vk_DESIREDKEYS);
+robot.keyRelease(KEYEVENT.Vk_DESIREDKEYS);
+
+Another method to automate desktop events using autoIT 
+download autoIT IDE and editor 
+using autoIT IDE use the finder to find the controlID of the event 
+use Editor, Below are some of the commands 
+Context.set("")
+Context.Click()
+TO authenticate webpage.
+$Title="asdasd";  --> can be path or text to be validated 
+WinWaitActive ($Title)
+Send("username")
+Send("(TAB)")
+Send("password")
+Send("(ENTER)")
+
+WebDriver EventListeners: 
+used to listen to every events of the webelement operation. 
+Implement the WebDriverEventListener interface in the test class. 
+EventFiringWebDriver firing = new EventFiringWebDriver();
+TestClass test = TestClass();
+firing.register(test);
+after that we can use firing.<followed by all web elememnt methods>
+
+Selenium Grid - Cross browser testign 
+Uses Hub and Node concept. 
+To start hub 
+java -jar "filenameofstandaloneserver" -role hub 
+To start node 
+java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555
+to configure browser while starting node 
+java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Browser browsername="firefox",version=39.0, platform="MAC"
+If browser name contains whitespaces in case of Internet explorer
+java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Browser "browsername="firefox",version=39.0, platform="MAC""
 
 Thanks,
 Arun 
