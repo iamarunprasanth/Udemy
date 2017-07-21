@@ -463,6 +463,12 @@ Central repository - its where the maven downloads the jars when dependencies ar
 To download the depedencies from pom file, cmd-> maven dependency:sources (or) mvn test 
 To add javadoc for dependencies 
 maven dependency:rescources -DClassifier=javadoc
+Build life cycle -> Phases -> Goals
+mostly used mvn clean, test. 
+To run w.r.t TestNG xml we have to create surefire plugin with build tag and specify the TestNG xmls to run 
+if we need to set multiple profiles of TestNG xmls then we need to use profiles under profiles above step will be done. 
+Each profile for different types of tests -> Regression, sanity etc. 
+Command: mvn test -P$profilename$
 Thanks,
 Arun 
 
