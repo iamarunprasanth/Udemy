@@ -460,8 +460,9 @@ Helps to ease the build process. provides uniform build system.
 maven Repository :
 Local repository - the Maven user create on his local
 Central repository - its where the maven downloads the jars when dependencies are added in pom file
-
-
+To download the depedencies from pom file, cmd-> maven dependency:sources (or) mvn test 
+To add javadoc for dependencies 
+maven dependency:rescources -DClassifier=javadoc
 Thanks,
 Arun 
 
