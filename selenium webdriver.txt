@@ -454,6 +454,14 @@ java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Brows
 If browser name contains whitespaces in case of Internet explorer
 java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Browser "browsername="firefox",version=39.0, platform="MAC""
 
+Maven:
+Project management tool: Creates project hierarchy, seggereates b/w classes and tests, creates proj build, reports, doumentation
+Helps to ease the build process. provides uniform build system. 
+maven Repository :
+Local repository - the Maven user create on his local
+Central repository - its where the maven downloads the jars when dependencies are added in pom file
+
+
 Thanks,
 Arun 
 
