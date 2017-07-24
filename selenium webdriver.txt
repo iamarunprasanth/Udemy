@@ -470,6 +470,14 @@ if we need to set multiple profiles of TestNG xmls then we need to use profiles 
 Each profile for different types of tests -> Regression, sanity etc. 
 Command: mvn test -P$profilename$
 Surefire plugin has the tendency to create reports as well under target folder of maven -> Index.html & emailable-report.html
+
+Continous Integeration: Its an approach followed in Agile, What ever code checked in shouldn't affect other's code.
+Jenkins is a open source tool for CI
+Continous Integeration, Continous Testing, Achieve reports.
+Configuring jenkins - we need to provide java_HOME and MAVEN_HOME path in jenkins. 
+We can specify the GIT repository details., Once the build is triggered the code will be pushed to GIT reposiotry. 
+To enable automatic build triggers, Under Build we have to check build periodically and 
+Specify ***** - MINUTES HOURS DAYOFTHEMONTH MONTHOFHYEAR DAYOFWEEK
 Thanks,
 Arun 
 
