@@ -478,6 +478,20 @@ Configuring jenkins - we need to provide java_HOME and MAVEN_HOME path in jenkin
 We can specify the GIT repository details., Once the build is triggered the code will be pushed to GIT reposiotry. 
 To enable automatic build triggers, Under Build we have to check build periodically and 
 Specify ***** - MINUTES HOURS DAYOFTHEMONTH MONTHOFHYEAR DAYOFWEEK
+Cucumber:
+Given - Precondition 
+When - Test Condition
+Then - Result / Outcome 
+And - Supporting / Additional statement can be used to any of the above keywords 
+But - To express the negative comment , can be used with any of the keywords.
+@cucumberOptions(dryRun=true, monochrome=true, feature=feature, glue={stepdefinition})
+dryRun - Just checks for all feature file steps corresponding step definition is present or not 
+monochrome - for presenting the test summary in more precise way. 
+feature - looks for the path where feature files are placed.
+glue - looks for the test method definitions are associate.
+Sauce Lab integration: Used when supporting infrastrucutres are not available. 
+Can request Sauce lab for virtual platform as per the testing requirement and inturn we will get user id and key value to use hardware.
+
 Thanks,
 Arun 
 
