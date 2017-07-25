@@ -75,3 +75,12 @@ return data;
 Casting: When downcasting a higer reference, we need cast to lower ref.
 
 Upcasting: 
+Camera camera1;
+Machine machine = camera1; // upcasting 
+Machine machine1 = camera2;
+Camera camera2=(Camera)machine1 // downcasting.
+
+Machine machine4 = new Machine();
+Camera camera5 = machine4; // this won't work, gives compile time error. 
+
+
