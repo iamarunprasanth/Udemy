@@ -83,4 +83,43 @@ Camera camera2=(Camera)machine1 // downcasting.
 Machine machine4 = new Machine();
 Camera camera5 = machine4; // this won't work, gives compile time error. 
 
+Using Generics:
+Till java 5 without Generics
+ArrayList list = new ArrayList();
+list.add("fruit")
+String fruits = (String) list.get(0); // downcasting object to String. 
+From java 6 using generics 
+ArrayList<String> list = new ArrayList<String>(); // can able to provide type so that casting is not required.
+From java 7 using generics
+ArrayList<String> list = new ArrayList<>(); // type is not needed on Object creation 
+Using wildcards on generics 
+
+ArrayList<String> list = new ArrayList<? list>(); // ? is a wildcard, passing unkown object type. 
+when we iterate this, we need to use Object type:list;
+It can also extends any super class 
+for ex: ArrayList<String> list = new ArrayList<?extends Machine list>();
+then Machine type can be used to iterate instead of Object type to print Machine class related. 
+
+Anonymous class:
+class Machine{
+public void start() {
+syso("starting..");
+}
+public class App {
+main(String args[]) {
+Machine machine = new Machine(){ // Anonymous class -> Its a sub class of Machine class type but with no class name. 
+@Override
+public void start() {
+syso("machine starting..");
+}};
+machine.start(); // will override the parent class implementation and display overriden. 
+}}} // Anonymous class works for Interface and Abstract class as well.
+
+Reading file using Scanner
+1. capture the path of the file 
+2. Using Scanner scanner = new Scanner(path)
+3.while(scanner.hasNextLine()) // to read strings. use hasNext(to read int)
+String line = scanner.nextLine();
+syso(line);
+
 
