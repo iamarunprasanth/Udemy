@@ -1,0 +1,77 @@
+primitive datatype: int, float, double, boolean, char, byte, long, short
+Non Primitive datatype: They are objects - String. 
+Diff b/w String and Stringbuilder 
+String: It will replace the old text with new when appended.
+StringBuilder: it will keep on adding the text when appended. 
+StringBuilder sb = new StringBuilder();
+sb.append("").append("");
+While loop: Entry controlled loop
+while(condition){
+// do something
+}
+for loop: (initialization;condition;increment/decrement)
+do-while loop: do{
+                something
+                }while(condition);
+                
+if(condition){
+else if() {
+// can have n number of if-else 
+}
+}else{
+}
+Switch(int n){
+case 1
+.
+..
+.
+case n:
+default{ // Optional.
+}
+Getting user input: we use Scanner class - Scanner scanner = new Scanner(System.in) -> refers to keyboard input.
+
+Array is a class 
+int[] intArray = new int[4];
+intArray={1,2,3,4,4}
+Multidimensional array:
+int[][] multiArray = new int[3][3];
+multiArray = {{1,2,3},{4,5,6}};
+// Array.length most used func to get array length. 
+Class : is a blue print contains state (instance variables) and behaviours (methods)
+Methods: Certain behaviour.
+Method Parameters: public void getInput(int a, int b) {} // parameters.
+Method Arguments: are the value we pass on the method with parameters.
+This keyword can be used to initialize the instance variables. 
+Constructor - when an objject of a class is initialized, constructor will execute automatically. 
+public CLASSA {
+public CLASSA() {} // can have any number of parameters.
+}
+Static - keyword when used, the instance variable/metod can be accessed using the class directly. 
+Static and FINAL - when used to initialize the constants and those value can't be changed through its life span.
+toString() - used to print the obj.toString();
+Inheritance - Parent class extends Child class - Child class can override all the properties of the parent class. 
+A child class can extend to maximum of one parent class
+Packages - are like folders to segregate the similar class types together, when a class from diff packages is accessed 
+then package reference has to be imported. 
+interfaces - unlike classes, they provide a template containing list of methods 
+A class can implement n number of interfaces. A interface cannot implement a interface 
+Abstract class can implement an interface - won't throw error on compile time, 
+since Objects cannot be created for Abstract classes and interfaces. 
+but, when a normal class extends Abstract class implementing interface - It will throw a run time error. 
+Public - can be accessible anywhere 
+private - can be accessible only within the class 
+protected - onluy be accessible withing the package and child class extending from other packages. 
+Polymorphism - wherever the Parent class is initialized can be called with child reference as well. 
+Encapsulation - Data hiding and abstraction. 
+private String data;
+//setters
+public void getData(String data) {
+this.data =data;
+}
+//getters
+public String showData() {
+return data;
+}
+Casting: When downcasting a higer reference, we need cast to lower ref.
+
+Upcasting: 
