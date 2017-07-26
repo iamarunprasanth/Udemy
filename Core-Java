@@ -53,7 +53,8 @@ Inheritance - Parent class extends Child class - Child class can override all th
 A child class can extend to maximum of one parent class
 Packages - are like folders to segregate the similar class types together, when a class from diff packages is accessed 
 then package reference has to be imported. 
-interfaces - unlike classes, they provide a template containing list of methods 
+interfaces - unlike classes, they provide a template containing list of abstract methods (abstract keyword is optional)
+can't have all sort of access modifiers - it is defaulted to public. 
 A class can implement n number of interfaces. A interface cannot implement a interface 
 Abstract class can implement an interface - won't throw error on compile time, 
 since Objects cannot be created for Abstract classes and interfaces. 
@@ -122,4 +123,45 @@ Reading file using Scanner
 String line = scanner.nextLine();
 syso(line);
 
+Handling Exceptions in java
+Using throws and try catch block for handling the exceptions.
+Multiple exception try{}
+catch(IOException|Exception){}finally{try[]catch{}} // finally executes on both the scenarios. 
+Checked exceptions : forced to be handle - File , thread.sleep
+Runtime exception: not forced to be handle, but when compiled throws an exception. 
+1. dividing some number by 0 - Arithmetic exception
+2. text.length - when text is not been declared with any value - Null pointer exception
 
+Abstract class:
+Its a kind of class unlike interfaces, object ref of the class can't be created. 
+it can have abstract/normal methods. it can have instance variables, can have all sort of access modifiers. 
+It can extend to one class and can extend from abstract/normal class.
+
+Diff b/w Abstract class and interface
+1. Abstract class can extend one class/abstract class at a time. can extend from one class/abstract class at a time.
+2. Abstract class can have abstract/concrete methods.
+3. In Abstract class - ABSTRACT keyword is mandatory 
+4. abstract  class can have  protected , public and public abstract methods
+5. abstract class can have  static, final  or static final  variable with any access specifier
+1. Interfaces can implement to multiple classes/abstract classes. can implement from an interface only. 
+2. Interface can have abstract method only (Abstract) keyword is optional.
+3. Interface can have only public access specifier by default.
+4. interface  can  have only static final (constant) variable i.e. by default
+
+Reading file using FileReader: // can read only in bunch chars
+so we have to use BufferedReader as well along with FileReader in order to read a complete line. 
+then after reading we wil close the BufferedReader br.close(); // it will close br,fr,file.
+To write to file use try(BufferedWriter bw = new BufferedWriter(new FileWriter(file)){
+bw.write("asdasd");}
+catch(Exception e){}
+Try with Rescources : java-7
+until java 6:
+Temp temp = new Temp();
+try{
+temp.close();}
+catch(Exception e) {
+syso(e.getMessage());}
+from java 7 using try with rescources:
+try(Temp temp = new Temp()) {}
+catch(Exception e) {
+syso(e.getMessage());}
