@@ -1,3 +1,5 @@
+Stack - is a low memory which remembers the variables declared.
+Heap - is a memory when a new Object is created, It allotes some memory to it. 
 primitive datatype: int, float, double, boolean, char, byte, long, short
 Non Primitive datatype: They are objects - String. 
 Diff b/w String and Stringbuilder 
@@ -167,6 +169,9 @@ from java 7 using try with rescources:
 try(Temp temp = new Temp()) {}
 catch(Exception e) {
 syso(e.getMessage());}
+AND multiple statements can be combined in try rescource for ex:
+try(FileOutputStream fs = new FileOutputStream("fis.ser");ObjectOutputStream os = new ObjectOutputStream(fs))
+{//so that both fs and os are autocloseable}
 Equals method -> can be used to compare the values of two non primitive types i.e objects.
 Inner class -> A class file can have n number of inner classes but only one class should be public class. 
 Enum (Enumerators) -> Used to specify some predefined constants can be used in your program
@@ -178,5 +183,15 @@ Animal(String name) { // when a parameter is specified on constructor it has to 
 this.name=name;
 }
 }
-TO use it in class, Animal animal = Animal.CAT; // something like that, it will restrict user using Values other than predefined.
+To use it in class, Animal animal = Animal.CAT; // something like that, it will restrict user using Values other than predefined.
 we can use methods like intanceof, valueOf, getName, getClass
+
+Recursion: calling a method within itself is called recursion. 
+public void calculate(){
+calculate()} // leads to stack over flow error. 
+Serialization - converting the object to binary data 
+Deserialization - converting back the binary data to object.
+To Write to a file -> we use ObjectOutputStream along with FileOutputStream. 
+// FileOutputStream automatically creates the file specified passed as argument.
+To read a file -> we use ObjectInputStream along with FileInputStream.
+java only supports pass by value; pass by reference is not supported due to complexity. 
