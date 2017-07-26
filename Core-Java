@@ -9,6 +9,8 @@ While loop: Entry controlled loop
 while(condition){
 // do something
 }
+== // for primitive types checks whether both the values are same.
+for non primitive types checks whether both points to same reference or not 
 for loop: (initialization;condition;increment/decrement)
 do-while loop: do{
                 something
@@ -165,3 +167,16 @@ from java 7 using try with rescources:
 try(Temp temp = new Temp()) {}
 catch(Exception e) {
 syso(e.getMessage());}
+Equals method -> can be used to compare the values of two non primitive types i.e objects.
+Inner class -> A class file can have n number of inner classes but only one class should be public class. 
+Enum (Enumerators) -> Used to specify some predefined constants can be used in your program
+public enum Animal{
+CAT("FRIDO"),MOUSE("JERRY"),DOG("SCOOBY");
+//u can have constructor for enum
+private String name;
+Animal(String name) { // when a parameter is specified on constructor it has to be specified on enum objects as well
+this.name=name;
+}
+}
+TO use it in class, Animal animal = Animal.CAT; // something like that, it will restrict user using Values other than predefined.
+we can use methods like intanceof, valueOf, getName, getClass
