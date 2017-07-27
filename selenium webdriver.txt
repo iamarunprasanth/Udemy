@@ -51,6 +51,10 @@ Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS)
 Explicit wait – waits for specified time until some condition(element to load,, visible, clickable) , when the condition doesn’t meet until the specified time period it will stop there. Explicit wait checks for every 500 milli seconds for the condition until the specified time period. 
 WebDriverWait wait = new WebDriverWait(driver, 10);
 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
+find all tags from the webpage :
+List<WebElement> element = driver.findElements(By.tagName("a"));
+element.addAll(driver.finElements(By.tagName("img"));
+Iterate and display the values.
 Using JavaScript Commands: 
 JavascriptExecutor js;
 To navigate to some page
