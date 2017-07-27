@@ -195,3 +195,55 @@ To Write to a file -> we use ObjectOutputStream along with FileOutputStream.
 // FileOutputStream automatically creates the file specified passed as argument.
 To read a file -> we use ObjectInputStream along with FileInputStream.
 java only supports pass by value; pass by reference is not supported due to complexity. 
+Collections Framework:
+Collections framework implements List interface. 
+List<String> list = new ArrayList<String>();
+1. ArrayList<> -> diff b/w Array ArrayList is ArrayList does the resizing automatically. however default size is 10 elements
+Useful methods of ArrayList 
+arrayList.add()->To add elements
+arrayList.get()-> to retrieve the elements
+arrayList.size() -> to retrieve the size of the list
+arrayList.remove()-> to remove some element from the list. 
+In ArrayList, if we remove elements from last, it's easy -> It just need to resize the arrayList
+but, when we remove element from top/middle -> it has to remove and rearrange the order of all the elements. 
+Linked List -> All the element in the list will have reference to the previous and next element, 
+so adding/removing element from anywhere is easy. 
+[1]->[2]->[3]
+    <-  <-
+ Map -> is an interface implements below classes
+HashMap -> Will have key,Value pair. Key should be unique and Value can have duplicate values. Key is like a reference. 
+Map<Integer,String> map = new HashMap<>();
+//To add value to map
+map.put(1,"One");
+//To retrieve value 
+map.get(1); // with key ref we can retrieve value on map 
+// To iterate 
+for(Map.EntrySet<Integer,String> entry:map.entrySet()){
+int key=entry.getKey() // java does the autoboxing automatically, converting Integer to int.
+String value=entry.getValue();
+Using Enhanced loop in maps
+for(Integer key:map.keySet()){
+String value = map.get(key);
+}
+ HashMap in general doesn't maintain any ordering of element.
+LinkedHashMap<> -> The order of elements initialized are preserved.
+Treemap<> -> Sort the order in Natural order.
+Sets: Kind of collection which will store only unique elements.'
+Set is an interface.
+Set<String> set = new HashSet<>()/LinkedHashSet<>/TreeSet<>();
+// to add 
+set.add()
+// to remove 
+set.remove()
+// to find certain element
+set.contains()
+//to get size
+set.size();
+// to copy one set to another 
+Set<String> set1 = new HashSet<>(set); // pass old set as argument.
+// to get matching values b/w two sets
+set1.retainAll(anotherSet);
+// to get the differences b/w two sets
+set1.removeAll(anotherSet);
+// We can pass new Object/Object ref as set/map values. but the values won't be unique.
+To make it unique we have to generate hashcode and equals method in that class. 
