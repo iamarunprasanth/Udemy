@@ -35,7 +35,8 @@ Junit test - @BeforeClass – Executes before class
 @AfterClass – Executes after class
 @Before – Executes before test method 
 @After – Executes after test method 
-@Test – Executes the test method, when multiple test methods are placed – order of execution will be based on alphabetical order of test method name.
+@Test – Executes the test method, when multiple test methods are placed – order of execution will be 
+based on alphabetical order of test method name.
 Click and type on a webelement – click.sendKeys(“text”);
 Navigate b/w web pages – driver.window.navigate().back/forward()
 State of the webElement – IsEnabled() -> returns true/false
@@ -110,7 +111,8 @@ actions.hold(fromElement).moveTo(toElement).release().build().perform();
 Working with Sliders using Actions class
 actions.dragAndDropBy(WebElement,x-offset,y-offset).perform(); x-> move horizontally; y- move vertically 
 Page Object Model:
-WebElements and web operations are created as a method on page class, called required method wherever applicable on each test class, to reduce lines of code and simplicity.
+WebElements and web operations are created as a method on page class, called required 
+method wherever applicable on each test class, to reduce lines of code and simplicity.
 Page Factory : Inbuilt in page object model, used @FindBy annotation to identify the webelement and uses init element method to initialize the webelements identified.
 Using pageFactory in Page class
 Class SearchPage{
@@ -127,7 +129,8 @@ element1.click();
 } 
 }
 
-Log4j2.x -> useful for logging the information on each block of testing, uses different level of loggers to verify the test progress of execution
+Log4j2.x -> useful for logging the information on each block of testing, uses different level of 
+loggers to verify the test progress of execution
 Has 3 components : Logger -> provides different types of loggers can be used at different levels 
 		   Appenders -> Used to print output to console/file/database.
 		Layouts -> Used to provide different styles to print output.
@@ -211,7 +214,8 @@ Asserts – Assert.assertTrue(condition) – if the condition fails then the met
 	Assert.assertFalse(condition) – if the condition passes then the method fails and stops block execution.
 	Assert.assertEquals(value) – if the value doesn’t match, then the method fails and stops block execution.
 SoftAssert – 
-WHY TO USE: When we have multiple asserts on a test method and using normal assert fails then sequencing assert will also fails, to overcome this issue we use soft assert. 
+WHY TO USE: When we have multiple asserts on a test method and using normal assert fails
+then sequencing assert will also fails, to overcome this issue we use soft assert. 
 SoftAssert sa = new SoftAssert();
 sa.Assert.assertEquals(value);
 sa.Assert.assertTrue(condition);
@@ -454,7 +458,8 @@ java -jar "filenameofstandaloneserver" -role hub
 To start node 
 java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555
 to configure browser while starting node 
-java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Browser browsername="firefox",version=39.0, platform="MAC"
+java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Browser browsername="firefox",
+version=39.0, platform="MAC"
 If browser name contains whitespaces in case of Internet explorer
 java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Browser "browsername="firefox",version=39.0, platform="MAC""
 
@@ -494,7 +499,8 @@ monochrome - for presenting the test summary in more precise way.
 feature - looks for the path where feature files are placed.
 glue - looks for the test method definitions are associate.
 Sauce Lab integration: Used when supporting infrastrucutres are not available. 
-Can request Sauce lab for virtual platform as per the testing requirement and inturn we will get user id and key value to use hardware.
+Can request Sauce lab for virtual platform as per the testing requirement and inturn we will get user id and 
+key value to use hardware.
 
 Thanks,
 Arun 
