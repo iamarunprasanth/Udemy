@@ -1,0 +1,17 @@
+Python installation -
+PIP - is a package management system , used to install and manage the software - return in python 
+sudo pip install wheel // wheel is new standard of distribution; faster and native support of packages. 
+pip list // shows packages available on the system
+pip show <package_name> // shows the details abt a package.
+// To uninstall package -> sudo pip uninstall wheel 
+// search for a package
+pip search <package_name>
+Python IDE - Anaconda from continum 
+           - PyCharm from jetbrains
+IPython is a command shell for interactive computing in multiple programming languages, originally 
+developed for the Python programming language, that offers introspection, rich media, shell syntax, tab completion,
+and history. IPython provides the following features: Interactive shells (terminal and Qt-based).
+TO INSTALL - sudo pip install ipython
+help('commandname') // give complete details of the command 
+when we say - print("hello world") // Hello world is an object of type string. 
+whatever stringref and object print displays is a string representation - so it doesn't use double/single quote while printing
