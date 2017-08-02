@@ -15,3 +15,23 @@ TO INSTALL - sudo pip install ipython
 help('commandname') // give complete details of the command 
 when we say - print("hello world") // Hello world is an object of type string. 
 whatever stringref and object print displays is a string representation - so it doesn't use double/single quote while printing
+working with Strings:
+to find equls we use var1==var2 or var1 is var2
+# - single line comment
+"""
+block comment 
+"""
+10**2 = use 10(power2)
+String methods 
+len - to find length
+lower - lowercase
+upper - uppercase
+str(2) - to convert int type to string type
+replace strings
+string ="arun"
+print(string.replace(<self>,<old>,<new>,<occurence-count>)
+substrings 
+sub="arun"
+print(sub[1:3)) # 1 is starting index (inclusive) and 3 is ending index (exclusive)
+print(sub[1:3:2]) # last argument is step it will ignore the 2nd character from the word. 
+
