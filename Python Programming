@@ -15,23 +15,85 @@ TO INSTALL - sudo pip install ipython
 help('commandname') // give complete details of the command 
 when we say - print("hello world") // Hello world is an object of type string. 
 whatever stringref and object print displays is a string representation - so it doesn't use double/single quote while printing
-working with Strings:
-to find equls we use var1==var2 or var1 is var2
+working with Strings: Strings are collection of characters
+An is expression evaluates to True if two variables point to the same (identical) object.
+An == expression evaluates to True if the objects referred to by the variables are equal (have the same contents).
 # - single line comment
 """
 block comment 
 """
 10**2 = use 10(power2)
+booleans - boolean of 0 and string of none(null called as none) is always false. bool(0)/ bool(c) =false; #c="" #none value
 String methods 
 len - to find length
 lower - lowercase
 upper - uppercase
+print(len(c))
+print(c.upper())
+print(c.lower())
 str(2) - to convert int type to string type
+int =123
+var="asd"
+print(var+str(int))
 replace strings
 string ="arun"
 print(string.replace(<self>,<old>,<new>,<occurence-count>)
+string ='Arun Prasanth'
+print(string.replace('a','r',3)) # replace is case sensitive.
 substrings 
 sub="arun"
 print(sub[1:3)) # 1 is starting index (inclusive) and 3 is ending index (exclusive)
 print(sub[1:3:2]) # last argument is step it will ignore the 2nd character from the word. 
-
+String formatting:
+string ='Arun Prasanth'
+age =26
+print("My name is %s,My Age is %d"%(string,age))
+String slicing and indexing
+string ='Arun prasanth'
+print(string[ : :2] // prints from start to end, ignoring 2nd sequencing character.
+print(string[-1]) // prints the last character from the string
+print(string[ :14: 1] // prints from starting to 13th character and ignores nothing
+# List are collection of strings
+list1 =["a","b","c"]
+list2=["r","e","q"]
+numlist=[1,2,3]
+string="hello"
+list3=list1+list2+numlist # can add int and string to list 
+print(list1+list(string)) # converts string as a list 
+#append -> adds item to last to the list
+list1=["one","two","three"]
+list1.append("four")
+print(list1)
+#insert adds item at specific index position
+list1.insert(1,"eleven")
+print(list1)
+# pop removes the item from the append & provides a return of item removed.
+removed = list1.pop()
+print(removed)
+# remove method can be used to remove element providing item name, doesn't provide return
+usingremove = list1.remove("eleven")
+print(list1)
+#list slicing
+print(list1[:2])
+#sorting natural order
+list1.sort()
+print(list1)
+# Dictionary are like hash map but with no sequencing (maintains no order), no indexing
+# uses {key:value pair , key:value} 
+dic = {'one':'num',2:'integer'}
+print(dic)
+#to print specific value 
+print(dic['one'])
+#empty Dictionary
+dic1={}
+#to insert value to Dictionary
+dic1['one']="Hello"
+dic1[2]=23
+print(dic1)
+# we can able to change the value at run time as well 
+dic1[2]=23+12
+print(dic1)
+# Nested dictionary cars ={'bmw':{'model':'i162','year':2016}'benz':{'model':'i162','year':2016}}
+cars ={'bmw':{'model':'i162','year':2016},'benz':{'model':'i162','year':2016}}
+print(cars)
+print(cars['bmw']['year'])
