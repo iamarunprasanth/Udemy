@@ -97,3 +97,29 @@ print(dic1)
 cars ={'bmw':{'model':'i162','year':2016},'benz':{'model':'i162','year':2016}}
 print(cars)
 print(cars['bmw']['year'])
+# Dictionary methods
+list1={'car':'bmw','model':2016}
+# to display keys
+print(list1.keys())
+# to display values
+print(list1.values())
+# to remove any value 
+list1.pop('car')
+print(list1)
+# to know list of items
+print(list1.items())
+# to clear all items
+list1.clear()
+print(list1)
+#to copy to another Dictionary
+list1={'car':'bmw','model':2016}
+list2 = list1.copy()
+print(list2)
+# Tuple are immutable 
+my_tuple=(1,2,3.3,3,3,3,3) # this how we declare Tuple
+# mainly has 2 methods index, and count 
+print(my_tuple[0])
+print(my_tuple.index(2))
+#can count no of occurence 
+print(my_tuple.count(3))
+
