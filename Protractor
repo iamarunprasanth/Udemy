@@ -1,0 +1,26 @@
+Protractor is used for testing angular JS application and non angular js application as well.
+works as a Solution integrator combining powerful technologies like Selenium, Jasmine, Web driver, etc.
+
+Protractor is a NodeJS program which is written in JavaScript and runs with Node to identinfy the web elements in AngularJS applications, 
+and it also uses WebDriver to control the browser with user actions.
+
+AngularJS applications are Web Applications which uses extended HTML's syntax to express web application components. 
+It is mainly used for dynamic web applications. These applications use less and flexible code compared with normal Web Applications.
+
+Angular JS applications have some extra HTML attributes like ng-repeater, ng-controller, ng-model.., etc. 
+which are not included in Selenium locators
+
+The protractor is an end to end testing framework for Angular JS based applications. While most frameworks focus on conducting unit tests for Angular JS applications, 
+Protractor focuses on testing the actual functionality of an application.
+1. install selenium
+2. install node.js
+3. in cmd, npm install -g protractor 
+to check version protractor -version
+4. webdriver-manager update
+5. webdriver-manager start
+
+Sample AngularJS application testing using Protractor
+Protractor needs 2 files to run, a spec file and configuration file.
+
+Configuration file: This File helps protractor to where the test files are placed (specs.js) and to talk with Selenium server (Selenium Address). Chrome is the default browser for Protractor.
+Spec file: This File contains the logic and locators to interact with the application.
