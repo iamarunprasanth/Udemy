@@ -128,7 +128,6 @@ public void clickElement() {
 element1.click();
 } 
 }
-
 Log4j2.x -> useful for logging the information on each block of testing, uses different level of 
 loggers to verify the test progress of execution
 Has 3 components : Logger -> provides different types of loggers can be used at different levels 
