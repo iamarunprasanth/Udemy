@@ -1,1 +1,7 @@
+Numbers are mutable, 
+Strings are immutable, each letter in a string is considered as sequence so through index so:
+String ="arun"
+String[0] =a
+we can do indexing and slicing on a string. String[1:4:2:] 1st denotes starts from exclusive 2nd denotes end string inclusive last 
+denotes occurences will get ignored. 
 
