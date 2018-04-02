@@ -52,6 +52,11 @@ Driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS)
 Explicit wait – waits for specified time until some condition(element to load,, visible, clickable) , when the condition doesn’t meet until the specified time period it will stop there. Explicit wait checks for every 500 milli seconds for the condition until the specified time period. 
 WebDriverWait wait = new WebDriverWait(driver, 10);
 WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
+FluentWait = Waits for predefined time frequecy for a condition (element to be present) on the page. ignoring nosuchelementexception.
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+    .withTimeout(30, SECONDS)
+    .pollingEvery(5, SECONDS)
+    .ignoring(NoSuchElementException.class);
 find all tags from the webpage :
 List<WebElement> element = driver.findElements(By.tagName("a"));
 element.addAll(driver.finElements(By.tagName("img"));
@@ -91,8 +96,8 @@ Iframes: window within a window
 		// switching to frame using number 
 		driver.switchTo().frame(0);
 		// navigating back to parent window 
-		driver.switchTo().defaultContent();
-		driver.switchTo().parentFrame();
+		driver.switchTo().defaultContent(); -- switch to very first frame
+		driver.switchTo().parentFrame(); -- switch to one frame above 
 Handling javascript popups 
 Simple alert
 Driver.switchTo().alert;
@@ -101,7 +106,7 @@ Alert.dismiss();
 
 Mouse over using Actions class:
 Actions action = new Actions(driver);
-action.moveToElement(WebElement).perform();
+action.moveToElement(WebElement).build().perform();
 
 Drag and drop element using Actions class:
 Actions actions = new Actions(driver);
@@ -446,8 +451,9 @@ WebDriver EventListeners:
 used to listen to every events of the webelement operation. 
 Implement the WebDriverEventListener interface in the test class. 
 EventFiringWebDriver firing = new EventFiringWebDriver();
-TestClass test = TestClass();
-firing.register(test);
+EventListener listener = new EventListener();
+firing.register(listener);
+firing = driver;
 after that we can use firing.<followed by all web elememnt methods>
 
 Selenium Grid - Cross browser testign 
@@ -464,43 +470,3 @@ java -jar "filenameofstandaloneserver" -role node -hub IP:4444 -port 5555 -Brows
 
 Maven:
 Project management tool: Creates project hierarchy, seggereates b/w classes and tests, creates proj build, reports, doumentation
-Helps to ease the build process. provides uniform build system. 
-maven Repository :
-Local repository - the Maven user create on his local
-Central repository - its where the maven downloads the jars when dependencies are added in pom file
-To download the depedencies from pom file, cmd-> maven dependency:sources (or) mvn test 
-To add javadoc for dependencies 
-maven dependency:rescources -DClassifier=javadoc
-Build life cycle -> Phases -> Goals
-mostly used mvn clean, test. 
-To run w.r.t TestNG xml we have to create surefire plugin with build tag and specify the TestNG xmls to run 
-if we need to set multiple profiles of TestNG xmls then we need to use profiles under profiles above step will be done. 
-Each profile for different types of tests -> Regression, sanity etc. 
-Command: mvn test -P$profilename$
-Surefire plugin has the tendency to create reports as well under target folder of maven -> Index.html & emailable-report.html
-
-Continous Integeration: Its an approach followed in Agile, What ever code checked in shouldn't affect other's code.
-Jenkins is a open source tool for CI
-Continous Integeration, Continous Testing, Achieve reports.
-Configuring jenkins - we need to provide java_HOME and MAVEN_HOME path in jenkins. 
-We can specify the GIT repository details., Once the build is triggered the code will be pushed to GIT reposiotry. 
-To enable automatic build triggers, Under Build we have to check build periodically and 
-Specify ***** - MINUTES HOURS DAYOFTHEMONTH MONTHOFHYEAR DAYOFWEEK
-Cucumber:
-Given - Precondition 
-When - Test Condition
-Then - Result / Outcome 
-And - Supporting / Additional statement can be used to any of the above keywords 
-But - To express the negative comment , can be used with any of the keywords.
-@cucumberOptions(dryRun=true, monochrome=true, feature=feature, glue={stepdefinition})
-dryRun - Just checks for all feature file steps corresponding step definition is present or not 
-monochrome - for presenting the test summary in more precise way. 
-feature - looks for the path where feature files are placed.
-glue - looks for the test method definitions are associate.
-Sauce Lab integration: Used when supporting infrastrucutres are not available. 
-Can request Sauce lab for virtual platform as per the testing requirement and inturn we will get user id and 
-key value to use hardware.
-
-Thanks,
-Arun 
-
