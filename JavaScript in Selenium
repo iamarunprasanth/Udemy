@@ -1,0 +1,29 @@
+To use JavaScript in selenium, we have to use Selenium class JavaScriptExecutor
+JavaScriptExecutor js = (JavaScriptExecutor) driver  --> we need to cast driver to js
+js.executeScript() --> Is the method used to execute js commands in selenium
+
+1. Method to highlight element 
+  public static void changeColor(String color, WebElement element) {
+  JavaScriptExecutor js = (JavaScriptExecutor)driver;
+  js.executeScript("argument[0].style.backgroundcolor='"color"'",element);
+    public static void flashElement(WebElement element, WebDriver driver) {
+    JavaScriptExecutor js = (JavaScriptExecutor)driver;
+    String bgcolor = element.getCSSValue(element);
+    for(int i=0;i<10;i++) {
+    changeColor("rgb0020",element);
+    changeColor(bgcolor,element);
+    }
+2. Method to draw frame on an element
+   public void drawFrame(WebElement element, WebDriver driver) {
+   JavaScriptExecutor js = (JavaScriptExecutor)driver;
+   js.executeScript("argument[0].style.border=3px solid red",element);
+   }
+3.Generate alert using JavaScript 
+  public static void generateAlert(WebDriver driver, String message) {
+  JavaScriptExecutor js = (JavaScriptExecutor)driver;
+  js.executeScript("alert='"+message+"'");
+  }
+4.Click element using Javascript
+  public static void clickElement(WebElement element, WebDriver driver) {
+  JavaScriptExecutor js = (JavaScriptExecutor)driver;
+  js.executeScript("arguments[0].click",element);
