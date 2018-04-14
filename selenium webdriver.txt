@@ -1,11 +1,11 @@
 
-WebDriver driver – Type of class used to implement the selenium web driver functionalities. 
-WebElement element  - returns WebElement used to store web element identified on a webpage.
+WebDriver driver – Is an interface used to implement the selenium web driver functionalities. 
+WebElement element  - Is an interface returns WebElement used to store web element identified on a webpage.
 By – Type of class derives different kind of locators can be used to identify web elements. 
-Different locators: Id, name, css, xpath, link text, tag 
+Different locators: Id, name, class, tagname,css, xpath, link text.
 Syntax for identifying web element using locator
 driver.findElemen(By.<locator>(“value”));
-Advanced locators CSS:
+Advanced locators CSS: CASCADING STYLE SHEET.
 Syntax – tag_name[attribute=’value’]
 # - represents id
 . – represents class 
@@ -29,8 +29,11 @@ Wild cards in xpath:
 When traverse through tags where proper attribute is not present:
 Parent-sibling/preceding-sibling/following-sibling
 //tag_name[contains(text(),’value’)]//parent-sibiling::tag_name
-Assert – will fail the test step but still proceed with next step 
-Verify – will fail the test step also stops the execution 
+Assert – will fail the test step and the test will be aborted. Assert is a class
+Verify – will fail the test step but the preceding test steps will still be executed, verify implements soft assert. 
+SoftAssert sa = new SoftAssert(driver);
+sa.assertAll(); -> This is required else to capture all the failures. 
+Verify – will fail the test step but the preceding test steps will still be executed, verify implements soft assert. 
 Junit test - @BeforeClass – Executes before class
 @AfterClass – Executes after class
 @Before – Executes before test method 
@@ -213,18 +216,6 @@ Different annotations in TestNG
 @AfterTest – Executes after test tag in xml file 
 @AfterSuite – Executes after suite tag in xml file.
 
-To use TestNG, we have to install plugin and few jar files and we have to work on TestNG Class instead of normal class file. 
-Asserts – Assert.assertTrue(condition) – if the condition fails then the method fails and stops block execution.
-	Assert.assertFalse(condition) – if the condition passes then the method fails and stops block execution.
-	Assert.assertEquals(value) – if the value doesn’t match, then the method fails and stops block execution.
-SoftAssert – 
-WHY TO USE: When we have multiple asserts on a test method and using normal assert fails
-then sequencing assert will also fails, to overcome this issue we use soft assert. 
-SoftAssert sa = new SoftAssert();
-sa.Assert.assertEquals(value);
-sa.Assert.assertTrue(condition);
-sa.assertAll(); -> Used to classify the failure 
-
 Running a TestNG test suite xml file 
 <Suite name=”someNmae”>
 <Test name = “someame”> 
@@ -267,6 +258,7 @@ Grouping test methods
 <run>
 <include name=”group_name”>
 </run>
+</groups>
 <Classes>
 <Class name =”pkg.classname”></Class>
 <Class name=”pkg.classname”></Class>
@@ -428,7 +420,7 @@ driver = new ChromeDriver(options));
 File upload using Robot class:
 StringSelector ss = new StringSelector(pathoffile);
 // copying to clipboard.
-ToolKit.getDefaultTookKit().getSystemClipBoard().setContent()
+ToolKit.getDefaultTookKit().getSystemClipBoard().setContent(ss)
 Robot robot = new Robot();
 robot.keyPress(KEYEVENT.Vk_DESIREDKEYS);
 robot.keyRelease(KEYEVENT.Vk_DESIREDKEYS);
