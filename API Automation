@@ -1,0 +1,15 @@
+API - Application Programming Interface.
+JSON & XML are light weight and standard procedure to exchange information. 
+2 ways we can communicate with webservices
+using REST - widely used now (Representational state transfer) Architechtural design
+using SOAP - old technology ( Simple object application protocol) protcol
+REST uses JAX-RS Java API, its very light weight can use REST and SOAP as it is a pattern. 
+can communicate with API using JSON and XML formats.
+SOAP uses JAX-WS Java API, Its very weight protocol, uses more bandwidth can communicate with XML format only 
+CRUD Operations 
+C - Create - POST CALL 
+R - Retrieve - GET CALL 
+U - Update - PUT CALL
+D - Delete - DELETE CALL 
+SWagger tool  - API Documentation
+
