@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://ecms.fs.capgemini.com/ResignationForm/ShowResignationForm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Resignation Form</title>
+    <link href="./Resignation Form_files/Site.css" rel="Stylesheet" type="text/css">
+    <link href="./Resignation Form_files/SpryMenuBarHorizontal.css" rel="Stylesheet" type="text/css">
+    <link href="./Resignation Form_files/ECMSStyleSheet.css" rel="Stylesheet" type="text/css">
+    <link href="./Resignation Form_files/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="./Resignation Form_files/SpryMenuBar.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery-1.5.1.min.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery.validate.min.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery.validate.unobtrusive.min.js.download" type="text/javascript"></script>
+    <script type="text/javascript" src="./Resignation Form_files/jquery-ui-1.8.11.min.js.download"></script>
+ <script src="./Resignation Form_files/jquery-1.9.1.js.download" type="text/javascript"></script>
+ <script src="./Resignation Form_files/bootstrap.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery-1.5.1.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery.filter_input.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery.maskedinput-1.3.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/jquery-ui.min.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/Common.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/EventHandlers.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/ResignationandRelievingDate.js.download" type="text/javascript"></script>
+    <script src="./Resignation Form_files/DialogWindow.js.download" type="text/javascript"></script>
+<script src="./Resignation Form_files/jquery.watermarkinput.js.download" type="text/javascript"></script>
+  
+<style type="text/css"> .ui-datepicker-current { display: none; } </style></head>
+<body>
+
+    <div class="topbluebar">
+    </div>
+    <div class="darkgreybg">
+        <div class="logo">
+        </div>
+        <div class="terNav">
+            <div id="navcontainer">
+                <ul id="navlist">
+                    <li id="active">Welcome <span class="bluetext"></span>:
+                        Arun Pasupathy</li>
+                        <li id="Li1">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="https://km3.capgemini.com/system/tdf/asset/2018/01/25/Exit_Policy_ECMS%20v%201%200.pdf?file=1&amp;type=document" target="_blank">Resignation Policy</a></span>
+                        </li>
+                        <li id="Li2">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="https://km3.capgemini.com/system/tdf/asset/2018/03/14/Offboarding%20SLA%20ECMS_PAN%20India.pptx?file=1&amp;type=document" target="_blank">SLA Document</a></span></li>
+                        <li id="Li3">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="https://ecms.fs.capgemini.com/ShowContactList/ShowContactList?layout=1" target="_self">Contact List</a></span></li>                 
+                        <li id="Li4">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="https://ecms.fs.capgemini.com/HolidayList/HolidayList" target="_self">Holiday List</a></span></li>               
+                    <li id="Li5">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="http://help.capgemini.com/" target="_blank">Support</a></span></li>
+                        <li id="Li6">| &nbsp; &nbsp; &nbsp;<span class="bluetext"><a href="https://km3.capgemini.com/system/tdf/asset/2018/01/25/Exit_Guidelines_and_FAQ%27s%20V%201.0%20ECMS.pdf?file=1&amp;type=document" target="_blank">FAQ</a></span></li>
+                        <li id="Li7">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="https://km3.capgemini.com/system/tdf/asset/2018/03/19/PAN%20India%20ECMS%20Process%20Flow%203.pdf?file=1&amp;type=document" target="_blank">Process Chart</a></span></li>
+                        <li id="Li8">|&nbsp;&nbsp;&nbsp;<span class="bluetext"><a href="https://ecms.fs.capgemini.com/Generic/logout" target="_self">Log out</a></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="topmenu">
+            <ul id="MenuBar1" class="MenuBarHorizontal">
+                    <li>
+<a href="https://ecms.fs.capgemini.com/Home/ShowHome">Home</a>                    </li>                         
+                    <li>
+                            <a href="https://ecms.fs.capgemini.com/ResignationForm/ShowResignationForm#" class="MenuBarItemSubmenu">Resignation Process</a>
+                            <ul>
+                                    <li><a href="https://ecms.fs.capgemini.com/ResignationForm/ShowResignationForm">Resignation Form</a></li>
+                                    <li><a href="https://ecms.fs.capgemini.com/MyInformationForm/MyInformationForm">My Information</a></li>
+                                    <li><a href="https://ecms.fs.capgemini.com/EmployeeWithdrawalForm/ShowEmployeeWithdrawalForm">Withdrawal Form</a></li>
+                                    <li><a href="https://ecms.fs.capgemini.com/ExitRequestStatus/ShowEmployeeSelfExitRequestStatus">Exit Request Status</a></li>
+                            </ul>
+                    </li>                         
+            </ul>
+        </div>
+    </div>
+    
+
+<script type="text/javascript">
+    var IndiaCountryId = 22;
+    var UnitedStatesCountryId = 49;
+    var CanadaCountryId = 7;
+    var UnitedKingdomCountryId = 48;
+
+$(document).ready(function () {
+
+
+
+        $('#BasicEmployeeDetailsUserControl_td_1').hide();
+        $('#BasicEmployeeDetailsUserControl_td_2').hide();
+
+    if(document.getElementById("ddlReason") != null)
+    {
+        var ddlReasonIndex = document.getElementById("ddlReason").selectedIndex;
+        if (ddlReasonIndex <= 0) {
+            $('#BasicEmployeeDetailsUserControl_tr_7').hide();
+            }
+    }
+ });
+
+    $(function () {
+        $("#ddlReason").change(function (evt) {
+            var ddlReasonIndex = document.getElementById("ddlReason").selectedIndex;
+            var meaning = 'Employee';
+            ddlReason = $("#ddlReason").val();
+            if (ddlReasonIndex <= 0) {
+                ddlReason = -1;
+            }
+            $.ajax({
+                url: "/ResignationForm/FillReasonCategory",
+                type: 'POST',
+                data: { ddlReasonId: ddlReason, meaning: meaning },
+                success: function (response) {
+
+                    if($("#Gender").val() != 'F')
+                    {
+                        response = response.replace(/\<option value.+V\_Personal\_Maternity Break\<\/option>/,'');
+                    }
+                    $("#ddlCategory").replaceWith(response)
+                },
+                error: function (xhr) {
+
+                    alert("Something went wrong, please try again");
+                }
+            });
+
+        });
+    });
+
+
+   $(function(){
+      $("#btnCancel").click(function(){
+        window.location.href = "/Home/ShowHome";
+      });
+    });
+
+    $(function(){
+      $("#btnreset").click(function(){
+        window.location.href = "/ResignationForm/ShowResignationForm";
+      });
+    });
+
+    $("#btnSubmit").live("click", function (e) {
+       
+       e.preventDefault(); // added by abhijit
+     var ContactNumberempty = document.getElementById("txtContactNumber");
+     var MobileNumberempty = document.getElementById("txtMobileNumber");
+     var CountryID = document.getElementById("hdnCountryId").value;
+     var email = document.getElementById("txtEmailAddress").value;
+     var NoOfDays = document.getElementById("hdnnoticePeriodShortfallDays").innerHTML;
+    
+     var objects = [  'ddlReason::required:null:Please Select Reason',
+                      'ddlCategory::required:null:Please Select SubReason',
+                      'txtCommunicationAddress::required:null:Please provide Address for Communication',
+                      'txtCommunicationAddress::regex:^.{0,1000}$:Address for Communication (After last working date)- max text limit 1000 characters',
+                      'txtMessage::regex:^.{0,1000}$:Message to Supervisor / Comments- max text limit 1000 characters'
+                  ];
+
+        if (ContactNumberempty.value.length == 0 && MobileNumberempty.value.length == 0 )
+           objects.push('null::generalmsg:null:Please provide Landline or Mobile Number ');
+        else
+        {
+         if (CountryID == IndiaCountryId) {
+                objects.push('txtMobileNumber::regex:^(\\+\\d{2}-\\d{10})$:Please provide valid Mobile Number (Format - "+99-9999999999")');
+            }
+            else {
+                objects.push('txtMobileNumber::regex:^(\\+\\d{1,2}-\\d{1,10})$:Please provide valid Mobile Number (Format - "+99-9999999999")');
+            }
+            switch (CountryID) {
+                //US and Canada
+                case UnitedStatesCountryId:
+                case CanadaCountryId:
+                 objects.push('txtContactNumber::regex:^(\\+1-\\d{3}\\-\\d{3}-\\d{4})?$:Please provide valid  Landline No. (e.g. +1-999-999-9999)');
+               break;
+                //UK
+                case UnitedKingdomCountryId:
+                  objects.push('txtContactNumber::regex:^(0|\\+44)\\d{7,11}$:Please provide valid Landline No. (Starts with 0/+44 followed by 7-11 digits without spaces)');
+                break;
+                default:
+                    objects.push('txtContactNumber::regex:^\\d{2,3}-\\d{2,6}-\\d{4,10}$:Please provide valid  Landline No. (Format - Country Code- City Code- Number e.g. 91-20-27601000)');
+                break;
+            }
+
+
+        }
+        var errorFound = false;
+        var emailregexp= /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        if (emailregexp.test(email) == false) {
+            errorFound = true;
+        }
+        if (email.length == 0)
+            objects.push('null::generalmsg:null:Please provide Personal Email Address');
+        else if((email.toLowerCase().indexOf("capgemini") != -1) || errorFound == true) {
+            objects.push('txtEmailAddress::generalmsg:fail:Please Provide Personal Email Address other than Capgemini’s email address.(Format- xxx@gmail.com)');
+        }
+        else
+        {
+            
+            if(errorFound == true)
+                objects.push('null::generalmsg:null:Please Provide valid Personal Email Address other than Capgemini’s email address.');
+        }
+        
+
+        var title = 'Resignation Form';
+
+        if (ValidationFailedOnSubmit(objects, title) == true) {
+            return false;
+        }
+        else {
+            var formName = $('#btnSubmit')[0].attributes["form-name"].value;
+            var controllerName = $('#btnSubmit')[0].attributes["controller-name"].value;
+            var actionName = $('#btnSubmit')[0].attributes["action-name"].value;
+            var details = $("#" + formName).serialize();
+            details = details + '&CountryId=' + CountryID + '&NoOfDays' +NoOfDays;
+            SubmitResignationDetails(formName, controllerName, actionName,details,e);
+        }
+    });
+
+
+    function OnAgreementAcceptTrueFunction()
+    {
+
+           var formName = $('#btnSubmit')[0].attributes["form-name"].value;
+           var controllerName = $('#btnSubmit')[0].attributes["controller-name"].value;
+           var actionName = $('#btnSubmit')[0].attributes["action-name"].value;
+           var details = $("#" + formName).serialize();
+
+        SubmitData(formName, controllerName, actionName, details, true,callBackFunction);
+    }
+
+    //Calls to enable/disable the controls after returning from submit
+    function callBackFunction()
+    {
+        var objectContexts = [""];
+        objectContexts.push('ddlReason:enabled:false');
+        objectContexts.push('ddlCategory:enabled:false');
+        objectContexts.push('txtCommunicationAddress:enabled:false');
+        objectContexts.push('txtContactNumber:enabled:false');
+        objectContexts.push('txtEmailAddress:enabled:false');
+        objectContexts.push('txtMessage:enabled:false');
+        objectContexts.push('btnSubmit:enabled:false');
+        objectContexts.push('btnreset:enabled:false');
+        objectContexts.push('txtMobileNumber:enabled:false');
+
+        //Remove the first element
+        objectContexts.shift();
+        SetControlContext(objectContexts);
+    }
+
+
+    function SubmitResignationDetails(formName, controllerName, actionName,details, e) {
+
+        $.ajax({
+
+            url:'/' + controllerName + '/' + 'submit',
+            data: details,
+            type: 'POST',
+            datatype:'xml',
+            success: function (successMsg) {//Success scope starts
+                var msgInfo;
+                if (successMsg.length > 0) {
+                    var responseXml = $.parseXML(successMsg);
+                    var responseType = $(responseXml).find('ResponseType').text();
+                    var responseMessage = $(responseXml).find('ResponseMessage').text();
+                    var CountryID = document.getElementById("hdnCountryId").value;
+                    
+
+                    if (responseType == 'success'){
+
+                        if (CountryID == UnitedKingdomCountryId) {
+                            var agreementHtml = '<P style="TEXT-INDENT: -0.25in; MARGIN: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo1" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt; mso-fareast-font-family:Verdana; mso-bidi-font-family: Verdana;mso-bidi-font-weight: bold"><SPAN style="mso-list: Ignore">"a)<SPAN style="FONT: 7pt "Times New Roman"">&nbsp;&nbsp;&nbsp; </SPAN></SPAN></SPAN><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt">I will not </SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><?xml:namespace prefix = ons = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></U></B></P><P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt"> (1) for a period of six months after the termination of this agreement, directly or<SPAN style="mso-spacerun: yes"></SPAN>indirectly, solicit to provide or provide any professional services such as those provided by the Company for anyone who is a client of the Company anytime during the twelve months prior to my leaving the Company, and for whom I provide any service as an employee of the Company during the five years prior to my leaving;<o:p></o:p><br/><br/></SPAN></P> <P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt">(2) for a period of six months after the termination of this agreement, directly or indirectly, without the prior written consent of the Company, solicit for employment with myself or any firm or entity with which I am associated, any employee of the Company or otherwise disrupt, impair, damage, or interfere with the Companys relationship with its employees;<o:p></o:p><br/><br/></SPAN></P><P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif";FONT-SIZE: 10pt"><SPAN style="mso-spacerun: yes">&nbsp;</SPAN>(3) upon the termination of my employment, remove, retain, copy, or utilize any confidential, privileged or proprietary information, trade secrets, or other property of the Company, including but not limited to manuals, software, data, files, client lists or materials, or other data, publications or materials. The non-compete provisions of this paragraph will not apply to a client of the Company or any predecessor of the Company for whom I performed services or with whom I had significant professional contact prior to joining the Company. If the Company requests me to terminate my relationship with the Company, the non-compete provisions of this paragraph will not apply to me with respect to those clients of the Company, if any, as to which the Company and I reach mutual agreement."</SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p></o:p></SPAN></U></B></P> <P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p><br/><SPAN style="TEXT-DECORATION: none"></SPAN></o:p></SPAN></U></B></P><P style="TEXT-INDENT: -0.25in; MARGIN: 0in 0in 0pt 0.5in;" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt; mso-fareast-font-family: Verdana;mso-bidi-font-family: Verdana; mso-bidi-font-weight: bold"><SPAN style="mso-list: Ignore">(b)<SPAN style="FONT: 7pt "Times New Roman"">&nbsp;&nbsp;&nbsp; </SPAN></SPAN></SPAN><SPAN style="FONT-FAMILY: "Verdana","sans-serif";FONT-SIZE: 10pt">The employee and the Company acknowledge and agree that the duration and geographic scope of the covenants contained in paragraph (a) are fair and reasonable. Accordingly, the employee and the Company agree that, in the event that any of the covenants contained in paragraph (a) are nevertheless determined by a court or arbitration body to be unenforceable because of the duration or geographic scope thereof, the arbitration body or court making such determination may reduce such duration and/or scope to the extent necessary to enable such arbitration body or court to determine that such covenant is reasonable and enforceable, and to enforce such covenant as so amended.</SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""></SPAN></U></B></P> <P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><B><U> <SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p><SPAN style="TEXT-DECORATION: none"></SPAN></o:p><br/></SPAN></U></B></P><P style="TEXT-INDENT: -0.25in; MARGIN: 0in 0in 0pt 0.5in;" class=MsoListParagraph></SPAN></SPAN><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt">It is important that you adhere to the acceptance of Non-Solicit and Non-Compete Clause post your relieving from Capgemini.<B><SPAN style="COLOR: #1f497d"></SPAN></B></FONT></FONT></SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p></o:p></SPAN></U></B></P>';
+                        }
+                        else
+                        {
+                            var agreementHtml = '<P style="TEXT-INDENT: -0.25in; MARGIN: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo1" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt; mso-fareast-font-family:Verdana; mso-bidi-font-family: Verdana;mso-bidi-font-weight: bold"><SPAN style="mso-list: Ignore">"a)<SPAN style="FONT: 7pt "Times New Roman"">&nbsp;&nbsp;&nbsp; </SPAN></SPAN></SPAN><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt">I will not </SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><?xml:namespace prefix = ons = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></U></B></P><P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt"> (1) for a period of one year after the termination of this agreement, directly or<SPAN style="mso-spacerun: yes"></SPAN>indirectly, solicit to provide or provide any professional services such as those provided by the Company for anyone who is a client of the Company anytime during the twelve months prior to my leaving the Company, and for whom I provide any service as an employee of the Company during the five years prior to my leaving;<o:p></o:p><br/><br/></SPAN></P> <P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt">(2) for a period of twelve months after the termination of this agreement, directly or indirectly, without the prior written consent of the Company, solicit for employment with myself or any firm or entity with which I am associated, any employee of the Company or otherwise disrupt, impair, damage, or interfere with the Companys relationship with its employees;<o:p></o:p><br/><br/></SPAN></P><P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif";FONT-SIZE: 10pt"><SPAN style="mso-spacerun: yes">&nbsp;</SPAN>(3) upon the termination of my employment, remove, retain, copy, or utilize any confidential, privileged or proprietary information, trade secrets, or other property of the Company, including but not limited to manuals, software, data, files, client lists or materials, or other data, publications or materials. The non-compete provisions of this paragraph will not apply to a client of the Company or any predecessor of the Company for whom I performed services or with whom I had significant professional contact prior to joining the Company. If the Company requests me to terminate my relationship with the Company, the non-compete provisions of this paragraph will not apply to me with respect to those clients of the Company, if any, as to which the Company and I reach mutual agreement."</SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p></o:p></SPAN></U></B></P> <P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p><br/><SPAN style="TEXT-DECORATION: none"></SPAN></o:p></SPAN></U></B></P><P style="TEXT-INDENT: -0.25in; MARGIN: 0in 0in 0pt 0.5in;" class=MsoListParagraph><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt; mso-bidi-font-size: 12.0pt; mso-fareast-font-family: Verdana;mso-bidi-font-family: Verdana; mso-bidi-font-weight: bold"><SPAN style="mso-list: Ignore">(b)<SPAN style="FONT: 7pt "Times New Roman"">&nbsp;&nbsp;&nbsp; </SPAN></SPAN></SPAN><SPAN style="FONT-FAMILY: "Verdana","sans-serif";FONT-SIZE: 10pt">The employee and the Company acknowledge and agree that the duration and geographic scope of the covenants contained in paragraph (a) are fair and reasonable. Accordingly, the employee and the Company agree that, in the event that any of the covenants contained in paragraph (a) are nevertheless determined by a court or arbitration body to be unenforceable because of the duration or geographic scope thereof, the arbitration body or court making such determination may reduce such duration and/or scope to the extent necessary to enable such arbitration body or court to determine that such covenant is reasonable and enforceable, and to enforce such covenant as so amended.</SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""></SPAN></U></B></P> <P style="MARGIN: 0in 0in 0pt 0.5in" class=MsoListParagraph><B><U> <SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p><SPAN style="TEXT-DECORATION: none"></SPAN></o:p><br/></SPAN></U></B></P><P style="TEXT-INDENT: -0.25in; MARGIN: 0in 0in 0pt 0.5in;" class=MsoListParagraph></SPAN></SPAN><SPAN style="FONT-FAMILY: "Verdana","sans-serif"; FONT-SIZE: 10pt">It is important that you adhere to the acceptance of Non-Solicit and Non-Compete Clause post your relieving from Capgemini.<B><SPAN style="COLOR: #1f497d"></SPAN></B></FONT></FONT></SPAN><B><U><SPAN style="FONT-FAMILY: "Calibri","sans-serif"; COLOR: #1f497d; mso-bidi-font-family: "Times New Roman""><o:p></o:p></SPAN></U></B></P>';
+                        }
+
+                         if (!AgreementDialog(agreementHtml, 'Agreement to Non-Compete and Non-Solicitation Clause',OnAgreementAcceptTrueFunction))
+                        {
+                            return false;
+                        }
+
+                    }
+
+                   else if (responseType == 'information') {
+                        var objErrorMessages = [responseMessage];
+                        var titleText = 'Resignation Form';
+                        ShowValidationSummary(objErrorMessages, titleText,'error');
+                    }
+
+                }
+
+
+            },//Success scope ends
+            error: function (errorMsg) {
+
+                $("<div></div>")
+                        .addClass("dialog")
+                        .appendTo("body")
+                        .dialog({ title: 'Resignation Form Error',
+                            close: function () {
+                                $(this).remove();
+                            },
+                            draggable: false,
+                            resizable: false,
+                            modal: true,
+                            width: 800,
+                            left: 0
+                        })
+                        .attr("style", "background-color:#efebdb;color: red; font-family: Calibri; font-size: 13px")
+                        .html('Something went wrong...!!')
+                        .load(this.href)
+                        $(".close").live("click", function (e) {
+                            e.preventDefault();
+                            $(this).closest(".dialog").dialog("close");
+                            $(this).remove();
+                        });
+            }
+        });
+
+}
+</script>
+<form id="form1" name="form1">
+<div class="lightgreycolorbgwoleft">
+    <div class="mainsectionwoleft" id="fullheight">
+        <h1>
+            &nbsp;Resignation Form</h1>
+        <hr>
+        <br>
+        <input id="Gender" name="Gender" type="hidden" value="M">
+        <input id="hdnSeparationType" name="hdnSeparationType" type="hidden" value="Resignation">
+        
+        
+       
+            <table>
+                <tbody><tr>
+                    <td align="center">
+                        <label style="color: Red; font-weight: bold">
+                            Separation Type: Resignation Already in process
+                        </label>
+                    </td>
+                </tr>
+            </tbody></table>
+        
+
+      
+
+
+        <br>
+<table cellspacing="2" cellpadding="0" style="margin-left: 0px; width: 100%">
+    <tbody><tr id="BasicEmployeeDetailsUserControl_tr_1" name="BasicEmployeeDetailsUserControl_tr_1">
+        <td style="width: 25%; text-align: right">
+            Employee Name (ID) :
+        </td>
+        <td style="width: 25%;" id="tdEmployeeId">
+            Arun&nbsp;Pasupathy (092428_IN)
+        </td>
+        <td style="width: 25%; text-align: right">
+            Global Date of Joining :
+        </td>
+        <td style="width: 25%;">
+            05-Jul-2016
+        </td>
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_2" name="BasicEmployeeDetailsUserControl_tr_2">
+        
+        <td style="width: 25%; text-align: right">
+            UserId :
+        </td>
+        <td style="width: 25%;">
+apasupat        </td>
+        <td style="width: 25%; text-align: right">
+            Local Date of Joining :
+        </td>
+        <td style="width: 25%;">
+            05-Jul-2016
+        </td>
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_3" name="BasicEmployeeDetailsUserControl_tr_3">
+        <td style="width: 25%; text-align: right">
+            Designation :
+        </td>
+        <td>
+Consultant        </td>
+        <td style="width: 25%; text-align: right">
+            Location :
+        </td>
+        <td>
+Bangalore        </td>
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_4" name="BasicEmployeeDetailsUserControl_tr_4">
+        <td style="width: 25%; text-align: right">
+            SBU Name :
+        </td>
+        <td>
+APAC Platform        </td>
+        <td style="width: 25%; text-align: right">
+            Supervisor :
+        </td>
+        <td>
+Nagendra Kanakagiri(019474_IN)        </td>
+        
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_5" name="BasicEmployeeDetailsUserControl_tr_5">
+        <td style="width: 25%; text-align: right">
+            BU Name :
+        </td>
+        <td>
+APAC Platform        </td>
+        <td style="width: 25%; text-align: right">
+            Assigned Supervisor :
+        </td>
+        <td>
+                <label>
+                    Not Available
+                </label>
+        </td>
+        
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_6" name="BasicEmployeeDetailsUserControl_tr_6">
+        <td style="width: 25%; text-align: right">
+            Sub BU Name :
+        </td>
+        <td>
+CSD        </td>
+        <td style="width: 25%; text-align: right">
+            Organization :
+        </td>
+        <td>
+                <label>
+                    Not Available
+                </label>
+        </td>
+        
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_6" name="BasicEmployeeDetailsUserControl_tr_6">
+        <td style="width: 25%; text-align: right" id="BasicEmployeeDetailsUserControl_tr_6_td_3" name="BasicEmployeeDetailsUserControl_tr_6_td_3">
+            Separation / Transfer Type :
+        </td>
+        <td id="BasicEmployeeDetailsUserControl_tr_6_td_4" name="BasicEmployeeDetailsUserControl_tr_6_td_4">
+Resignation        </td>
+        
+        <td style="width: 25%; text-align: right">
+            Supervisor Approval Status :
+        </td>
+        <td>
+SupervisorApproved        </td>
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_7" name="BasicEmployeeDetailsUserControl_tr_7">
+        <td style="width: 25%; text-align: right">
+            Separation Reason :
+        </td>
+        <td>
+Voluntary        </td>
+        <td style="width: 25%; text-align: right">
+            Supervisor Approval Date :
+        </td>
+        <td>
+28-Jun-2018        </td>
+        
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_8" name="BasicEmployeeDetailsUserControl_tr_8">
+        <td style="width: 25%; text-align: right">
+            Separation Sub Reason :
+        </td>
+        <td>
+Resignation        </td>
+        <td style="width: 25%; text-align: right">
+            HR Lead Approval Status :
+        </td>
+        <td>
+LWDHRLeadApproved        </td>
+        
+        
+        
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_9" name="BasicEmployeeDetailsUserControl_tr_9">
+        <td style="width: 25%; text-align: right" id="BasicEmployeeDetailsUserControl_tr_6_td_3" name="BasicEmployeeDetailsUserControl_tr_6_td_3">
+            Confirmed Resignation Date :
+        </td>
+        <td>
+                <label>
+                    Not Available
+                </label>
+        </td>
+        <td style="width: 5%; text-align: right">
+            Location Of Transfer :
+        </td>
+        <td>
+                <label>
+                    Not Available
+                </label>
+        </td>
+        
+
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_10" name="BasicEmployeeDetailsUserControl_tr_10">
+        <td style="width: 25%; text-align: right">
+            Confirmed Last Working Date :
+        </td>
+        <td>
+29-Jun-2018        </td>
+        <td style="width: 25%; text-align: right">
+            BU HR Name :
+        </td>
+        <td style="text-align: left">
+Amrita Singh(063291_IN),Mansi Mondkar(018454_IN),Mihir Rasal(085037_IN),Neeraja Mohan Krishna(098519_IN),Prasad Pawaskar(074521_IN),Rahul Rane(126360_IN),Somashekar HS(101993_IN)        </td>
+        
+    </tr>
+    <tr id="BasicEmployeeDetailsUserControl_tr_11" name="BasicEmployeeDetailsUserControl_tr_11">
+       
+      
+
+        <td style="width: 25%; text-align: right; display: none;" id="BasicEmployeeDetailsUserControl_td_1" name="BasicEmployeeDetailsUserControl_td_1">
+            Documents Pick up location :
+        </td>
+        <td id="BasicEmployeeDetailsUserControl_td_2" name="BasicEmployeeDetailsUserControl_td_2" style="display: none;">
+                <label>
+                    Not Available
+                </label>
+        </td>
+ 
+
+    </tr> 
+    <tr id="BasicEmployeeDetailsUserControl_tr_12" name="BasicEmployeeDetailsUserControl_tr_12">  
+
+        <td style="width: 25%; text-align: right">
+            Global Group ID :
+        </td>
+        <td style="width: 25%;">
+            1131712
+        </td>
+
+    </tr>
+
+
+</tbody></table>
+            <table cellspacing="0" cellpadding="0" style="margin-left: 0px; width: 100%">
+               
+                <tbody><tr style="height: 35px">
+                </tr>
+                <tr>
+                    <td style="width: 25%; text-align: right">
+                        <input type="hidden" id="holiday" name="holiday" value="1 Jan 2018,26 Jan 2018,01 May 2018,15 Aug 2018,22 Aug 2018,02 Oct 2018,19 Oct 2018,01 Nov 2018,07 Nov 2018,25 Dec 2018">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            Resignation Date :</label>
+                    </td>
+                    <td>
+                            <input id="hdnResignation" name="hdnResignation" type="hidden" value="18-Jun-2018">       
+18-Jun-2018                    </td>
+                    <td colspan="2">
+                        <font color="#990000">The resignation date is todays date which is verified against
+                            weekend and holiday</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            Last working date :
+                        </label>
+                    </td>
+                    <td>
+                     <input id="hdnCountryId" name="hdnCountryId" type="hidden" value="22">   
+                      <input id="hdnJoiningDate" name="hdnJoiningDate" type="hidden" value="7/5/2016 12:00:00 AM">
+                      <input id="hdnTransferType" name="hdnTransferType" type="hidden" value="New Hire"> 
+                        <input id="hdnBaseCountryId" name="hdnBaseCountryId" type="hidden" value="0"> 
+                            <input id="hdnLWD" name="hdnLWD" type="hidden" value="29-Jun-2018">    
+29-Jun-2018                    </td>
+                    <td colspan="2">                 
+                        <font color="#990000">Last working date is ( Resignation date + 90 calender days) which
+                            is verified against weekend and holiday </font>               
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            Notice Shortfall days :
+                        </label>
+                    </td>
+                    <td>
+                            <script type="text/javascript">
+                                document.write(getAutoCalCulatedNoicePeriodDifference(document.getElementById("hdnResignation").value, document.getElementById("hdnLWD").value, 'Resignation')); 
+                            </script>78
+                    </td>
+                    <td colspan="2">                   
+                        <font color="#990000">Notice period is 90 days.
+                            [90 – (Last working date - Resignation date)]
+                            </font>                    
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            <span style="color: #ff0000">*</span> Reason :
+                        </label>
+                    </td>
+                    <td colspan="3">
+<select disabled="disabled" id="ddlReason" name="SelectedReason"><option value="">--Select One--</option>
+<option selected="selected" value="1454">Voluntary</option>
+</select>                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            <span style="color: #ff0000">*</span> SubReason :
+                        </label>
+                    </td>
+                    <td colspan="3">
+<select disabled="disabled" id="ddlReasonCategory" name="SelectedReasonCategory"><option value="">--Select One--</option>
+<option value="1513">Abandoned Employment</option>
+<option value="1490">Abscondee</option>
+<option value="1537">Attendance</option>
+<option value="1549">Attendance</option>
+<option value="1514">Bad Line Management</option>
+<option value="1493">Bench Counsel Out</option>
+<option value="1626">Bench Counsel Out</option>
+<option value="1491">BG Verification Failure</option>
+<option value="1486">BG Verification Failure</option>
+<option value="1508">BSv Transfer</option>
+<option value="1516">Company Culture</option>
+<option value="1515">Compensation</option>
+<option value="1498">Demise</option>
+<option value="1545">Demise</option>
+<option value="1492">Disciplinary Action</option>
+<option value="1489">Disciplinary Action</option>
+<option value="1546">End of Contract Period</option>
+<option value="1500">End of Fixed Contract</option>
+<option value="1496">End of Fixed Contract</option>
+<option value="1547">End of Fixed-Term Contract</option>
+<option value="1563">End Temporary Employment</option>
+<option value="1627">Expected to Leave</option>
+<option value="1628">Expected to Leave</option>
+<option value="1518">First Day - Last Day</option>
+<option value="264">FS NonPayroll – FS to FS location</option>
+<option value="1510">FS Transfer</option>
+<option value="1519">Grade Fitment Issues</option>
+<option value="1521">Higher Studies</option>
+<option value="121">IV_Background / Reference Check Discrepancies</option>
+<option value="174">IV_Background / Reference Check Discrepancies</option>
+<option value="153">IV_Deceased</option>
+<option value="226">IV_Gross Misconduct</option>
+<option value="376">IV_Internalization/insourcing by client</option>
+<option value="180">IV_Misconduct (Policy violation / discipline)</option>
+<option value="122">IV_Misconduct (Policy violation / discipline)</option>
+<option value="181">IV_Mutual Agreement</option>
+<option value="150">IV_Offer Declined</option>
+<option value="151">IV_Offer Withdrawn</option>
+<option value="230">IV_Performance</option>
+<option value="182">IV_Performance</option>
+<option value="1482">IV_Performance</option>
+<option value="185">IV_Redundancy / Reduction in Force</option>
+<option value="186">IV_Special Assignment</option>
+<option value="187">IV_Special Assignment_Lack of Work</option>
+<option value="227">IV_Special Assignment_Performance</option>
+<option value="1522">Lack of Career Advmnt Opprntes</option>
+<option value="1523">Lack of Confidnce in GrpFuture</option>
+<option value="1524">Lack of Training</option>
+<option value="1548">Legal Termination of Contract</option>
+<option value="1564">Location Transfer</option>
+<option value="223">Long Term Transfer</option>
+<option value="229">Long Term Transfer</option>
+<option value="1501">LongTermTransfer</option>
+<option value="1559">LongTermTransfer</option>
+<option value="1550">MI - BGV Failure</option>
+<option value="1538">MI - BGV Failure</option>
+<option value="1539">MI - Forcause</option>
+<option value="1552">MI - Forcause</option>
+<option value="1553">MI - Performance Issue</option>
+<option value="1542">MI - Performance Issue</option>
+<option value="1543">MI - PIP Failure</option>
+<option value="1555">MI - PIP Failure</option>
+<option value="1541">MI -&nbsp;Disciplinary Action</option>
+<option value="1551">MI -&nbsp;Disciplinary Action</option>
+<option value="1554">MI-Non Confirmtion(Aftr Prbn)</option>
+<option value="1558">MI-Non Confirmtion(Aftr Prbn)</option>
+<option value="1525">Movement to Core Industry</option>
+<option value="1499">Non-confirmation</option>
+<option value="1506">NonPayrollDomesticTransfer</option>
+<option value="1526">Not Regretted - Other Reason</option>
+<option value="145">O_Contractor to Regular Rolls</option>
+<option value="382">O_End of Contract</option>
+<option value="142">O_End of Contract</option>
+<option value="117">O_Retirement</option>
+<option value="146">O_Trainee on Rolls</option>
+<option value="228">O_Transfer to ACIS</option>
+<option value="271">O_Transfer to ACIS</option>
+<option value="1481">O_Transfer to ACIS</option>
+<option value="1484">Offer Revocation</option>
+<option value="1485">Onsite Resignation</option>
+<option value="1487">Performance Rating Failure</option>
+<option value="1494">Performance Rating Failure</option>
+<option value="1495">Performance Test Failure</option>
+<option value="1488">Performance Test Failure</option>
+<option value="1520">Personal - Health</option>
+<option value="1517">Personal - Marriage/Family</option>
+<option value="1527">Personal - Maternity</option>
+<option value="1528">Personal - Relocation</option>
+<option value="1540">Ramp Down / Rationalization</option>
+<option value="1556">Ramp Down / Rationalization</option>
+<option value="1530">Regretted for other reasons</option>
+<option value="1531">Relationship with colleagues</option>
+<option value="1505">ReleaseIntern</option>
+<option selected="selected" value="1483">Resignation</option>
+<option value="1512">Resignation</option>
+<option value="1544">Retirement</option>
+<option value="1497">Retirement</option>
+<option value="224">Return from Long Term Transfer</option>
+<option value="225">Return from Short Term Transfer</option>
+<option value="1529">Role</option>
+<option value="1561">Short Term Transfer</option>
+<option value="1480">Short Term Transfer</option>
+<option value="1503">Short Term Transfer</option>
+<option value="1532">Starting Something New/Own</option>
+<option value="1557">Terminated</option>
+<option value="1565">Transfer to ACIS</option>
+<option value="1560">Transfer to Affiliate</option>
+<option value="1562">Transfer to Affiliate</option>
+<option value="1504">Transfer to CG Affiliate</option>
+<option value="1502">Transfer to CG Affiliate</option>
+<option value="1507">Transfer to CG Affiliate</option>
+<option value="1511">Transfer to CG Affiliate</option>
+<option value="1509">Transfer to CG Affiliate</option>
+<option value="1566">Transfer to FS</option>
+<option value="1533">Travelling Time</option>
+<option value="119">V_Absconding / Unapproved leave / Uninformed absence</option>
+<option value="76">V_Better Career Opportunity</option>
+<option value="77">V_Better Compensation</option>
+<option value="60">V_Inter-Personal Issues (Relationship with Reporting Manager / Team)</option>
+<option value="260">V_Personal_Break in Career</option>
+<option value="261">V_Personal_Change in Career</option>
+<option value="113">V_Personal_Higher Studies</option>
+<option value="114">V_Personal_Marriage</option>
+<option value="375">V_Personal_Maternity Break</option>
+<option value="115">V_Personal_Medical/Health</option>
+<option value="259">V_Personal_Own/Family Business</option>
+<option value="116">V_Personal_Relocation (Home town/Accompany Spouse)</option>
+<option value="1536">Work Environment</option>
+<option value="1535">Work Life Balance</option>
+<option value="1534">Working Hours</option>
+</select>                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            Message to Supervisor / Comments :
+                        </label>
+                    </td>
+                    <td colspan="3">
+<textarea cols="20" disabled="disabled" id="txtMessage" name="MessageToSupervisor" rows="2">Resigning my job due to some personal reason.</textarea>                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            <span style="color: #ff0000">*</span> Address for Communication
+                            <br>
+                            (After last working date) :
+                        </label>
+                    </td>
+                    <td colspan="3">
+<textarea cols="20" disabled="disabled" id="txtCommunicationAddress" name="CommunicationAddress" rows="2">97, North housing unit shanmugaraja puram selavapuram Coimbatore 641026 TN</textarea>                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            Landline Number :
+                        </label>
+                    </td>
+                    <td>
+<input disabled="disabled" id="txtContactNumber" name="ContactNumber" type="text" value="">                    </td>
+                    
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            Mobile Number:
+                        </label>
+                    </td>
+                    <td>
+<input disabled="disabled" id="txtMobileNumber" name="MobileNumber" type="text" value="+91-8123273357">                    </td>
+                    <td colspan="2">
+                            <font color="#990000">Please enter Landline or Mobile Number (Format: Country Code – Area Code – Telephone Number)</font>
+
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label>
+                            <span style="color: #ff0000">*</span> Personal Email Address :
+                        </label>
+                    </td>
+                    <td>
+<input disabled="disabled" id="txtEmailAddress" name="PersonalEmailAddress" type="text" value="arunnpasupathy@gmail.com">                    </td>
+                    <td>
+                        <font color="#990000"> Note: Kindly add correct personal email id and contact details, as this will be considered for future correspondence.</font>
+                    </td>
+                </tr>
+            </tbody></table>
+            <br>
+            <br>
+            <br>
+            <table border="0" cellspacing="2" cellpadding="0" width="100%" style="margin-left: 0px;">
+                <tbody><tr>
+                    <td colspan="6" align="center" valign="top">
+            <span class="button">
+                                    
+                        <a href="https://ecms.fs.capgemini.com/ResignationForm/ViewFeedback" class="Anchorbutton" data-toggle="modal" data-target="#myModal" id="Feedback" aria-hidden="true" style="color:white; text-decoration:none;margin-top: -6px;">Employee Feedback
+                                            </a>
+                         </span>
+                            <span class="button">
+                                <input type="submit" value="Submit" class="form_button" id="btnSubmit" name="btnSubmit" form-name="form1" controller-name="ResignationForm" action-name="SubmitForm" disabled="disabled">
+                            </span>
+                            <span class="button">
+                                <input type="reset" value="Reset" class="form_button" id="btnreset" name="btnreset" disabled="disabled">
+                            </span>
+                        <span class="button">
+                            <input type="button" value="Cancel" class="form_button" id="btnCancel" name="btnCancel">
+                        </span>
+                    </td>
+                </tr>
+            </tbody></table>
+        
+          <input id="hdnLocationId" name="hdnLocationId" type="hidden" value="">       
+           <input id="hdnPreviousLocationID" name="hdnPreviousLocationID" type="hidden" value="">  
+        <input id="hdnDataSource" name="hdnDataSource" type="hidden" value="ACIS">     
+        <input id="hdnGlobalGroupId" name="hdnGlobalGroupId" type="hidden" value="1131712"> 
+                       
+    </div>
+</div>
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" style="border:none;">
+                                                <div class="modal-dialog">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content" id="myModalContent">
+                                                    </div>
+                                                </div>
+                                            </div>
+</form>
+
+    <div class="footerbar">
+        <br>
+        &nbsp; <span style="color: Navy">This Web site is best viewed at 1024 x 768 or higher resolution
+            with Microsoft Internet Explorer 11 or newer, Google Chrome and Mozilla Firefox</span>
+    </div>
+    <script type="text/javascript">
+        var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", { imgDown: "../../images/SpryMenuBarDownHover.gif", imgRight: "../../images/SpryMenuBarRightHover.gif" });       
+    </script>
+    
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div></body></html>
