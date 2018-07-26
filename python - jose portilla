@@ -1,7 +1,12 @@
-Numbers are mutable, 
-Strings are immutable, each letter in a string is considered as sequence so through index so:
-String ="arun"
-String[0] =a
-we can do indexing and slicing on a string. String[1:4:2:] 1st denotes starts from exclusive 2nd denotes end string inclusive last 
-denotes occurences will get ignored. 
+DataTypes:
+1. Numbers are mutable, 
+2. Strings are immutable, each letter in a string is considered as sequence of characters
+   strings can be quoted with single and double quotes.
+   indexing and slicing is possible over strings
+3. List - are sequence of characters of multiple datatypes also it is mutable. Each character of the list can be mutable.
+          indexing and slicing is possible since it represents sequence of characters 
+4. Dictionary - Key and value pair, can store any kind of datatype. It is an unordered collection, as it represents key and value pair.
+5. Tuple - they are like lists, but it is immutable, can be used when the data shouldn't be changed. 
+6. Sets - Unordered collection of unique elements. 
+
 
